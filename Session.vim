@@ -13,9 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +26 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
-badd +10 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/index.tsx
-badd +6 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
+badd +28 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+badd +4 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/index.tsx
+badd +21 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
+badd +1 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/Catalog.module.scss
 argglobal
 %argdel
 edit ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
@@ -62,12 +63,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((20 * winheight(0) + 20) / 41)
+let s:l = 29 - ((20 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 012|
+keepjumps 29
+normal! 011|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 30 + 93) / 186)
