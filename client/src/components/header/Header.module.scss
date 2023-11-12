@@ -1,0 +1,67 @@
+@import '../../styles/variables/variables';
+
+.header {
+  max-width: 1440px;
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  background-color: $primary;
+}
+
+.productActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .catalog {
+   a:hover {
+     div {
+       ul {display: grid}
+     }
+   }
+  }
+
+}
+
+.actions {
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 24px;
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    flex-flow: column
+  }
+}
+
+.user {
+  ul {
+
+  display: flex;
+  flex-flow: row ;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+
+  .userBar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .avatar {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px
+      }
+    }
+
+    .userMenu {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,275 @@
+$primary-font: 'Rubik', sans-serif;
+
+// Mixins for desktop typography
+
+@mixin text-xs {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-s {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-m {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-l {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-xl {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin bold-text-xs {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-s {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-m {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-l {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-xl {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-xs {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-s {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-m {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-l {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-xl {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+// Mixins for mobile typography
+
+@mixin text-xs-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-s-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-m-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-l-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin text-xl-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
+}
+
+@mixin bold-text-xs-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-s-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-m-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-l-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin bold-text-xl-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-xs-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-s-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-m-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-l-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
+
+@mixin header-text-xl-mobile {
+  font-family: $primary-font;
+  color: $on-surface;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%
+}
