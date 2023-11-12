@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  phone String @unique
+  firstName String
+  lastName String
+  birthDate String
+  city String
+  region String
+  role String @default("USER")
+
+  hash  String
+  salt  String
+
+  orders Order[]
+  account Account?
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  products Product[]
+  total Float
+  status orderStatus @default(value: NEW)
+}
+
+enum orderStatus {
+  NEW
+  COLLECTED
+  DELIVERY
+  CONFIRMED
+  UNCONFIRMED
+  REFUND
+  REFUNDED
+}
+
+model Account {
+  id Int @id @default(autoincrement())
+  isSetRate Boolean @default(false)
+
+  ownerId Int @unique
+  owner User @relation(fields: [ownerId], references: [id])
+
+}
+
+model Type {
+  id Int @id @default(autoincrement())
+  name String @unique
+  products Product[]
+  brands TypesOnBrand[]
+}
+
+model Brand {
+  id Int @id @default(autoincrement())
+  name String @unique
+  products Product[]
+  types TypesOnBrand[]
+}
+
+model TypesOnBrand {
+  type Type @relation(fields: [typeId], references: [id])
+  typeId Int
+  brand Brand @relation(fields: [brandId], references: [id])
+  brandId Int
+  @@id([typeId, brandId])
+}
+model Product {
+  id Int @default(autoincrement()) @id
+  name String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  price Float
+  sale Boolean @default(false)
+  image String @default("")
+
+  availibility Availibility
+  reviews Review[]
+  tags Tag[]
+  description Description?
+
+  typeName String
+  type Type @relation(fields: [typeName], references: [name])
+  brandName String
+  brand Brand @relation(fields: [brandName], references: [name])
+
+  orders Order[]
+}
+
+model Description {
+  id Int @default(autoincrement()) @id
+  content String
+  product Product @relation(fields: [productId], references: [id])
+  productId Int @unique
+}
+
+model Review {
+  id Int @default(autoincrement()) @id
+  title String
+  content String
+  rating Int
+  product Product @relation(fields: [productId], references: [id])
+  productId Int
+}
+
+model Tag {
+  id Int @default(autoincrement()) @id
+  content String
+  products Product[]
+}
+
+enum Availibility {
+  IN_STORE
+  ONLINE
+}
