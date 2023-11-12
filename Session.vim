@@ -13,13 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +28 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+badd +29 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
 badd +4 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/index.tsx
 badd +21 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
 badd +1 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/Catalog.module.scss
+badd +1 NvimTree_1
 argglobal
 %argdel
-edit ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+edit NvimTree_1
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -39,8 +40,6 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 30 + 93) / 186)
 exe 'vert 2resize ' . ((&columns * 155 + 93) / 186)
 argglobal
-enew
-file NvimTree_1
 balt ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
 setlocal fdm=manual
 setlocal fde=0
@@ -50,8 +49,20 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 wincmd w
 argglobal
+if bufexists(fnamemodify("~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx", ":p")) | buffer ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx | else | edit ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx | endif
+if &buftype ==# 'terminal'
+  silent file ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+endif
 balt ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
 setlocal fdm=manual
 setlocal fde=0
@@ -68,7 +79,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 29
-normal! 011|
+normal! 09|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 30 + 93) / 186)
