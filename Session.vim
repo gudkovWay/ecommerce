@@ -13,57 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +29 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
-badd +4 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/index.tsx
-badd +21 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
-badd +1 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/Catalog.module.scss
-badd +1 NvimTree_1
+badd +30 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+badd +41 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
+badd +10 ~/Documents/projects/selfDev/severYanochki/client/src/components/catalog/Catalog.module.scss
 argglobal
 %argdel
-edit NvimTree_1
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 30 + 93) / 186)
-exe 'vert 2resize ' . ((&columns * 155 + 93) / 186)
+edit ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
 argglobal
 balt ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx", ":p")) | buffer ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx | else | edit ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx | endif
-if &buftype ==# 'terminal'
-  silent file ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
-endif
-balt ~/Documents/projects/selfDev/severYanochki/client/src/components/header/Header.module.scss
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -74,16 +31,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 29 - ((20 * winheight(0) + 18) / 37)
+let s:l = 41 - ((13 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 29
-normal! 09|
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 30 + 93) / 186)
-exe 'vert 2resize ' . ((&columns * 155 + 93) / 186)
+keepjumps 41
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -91,14 +44,13 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

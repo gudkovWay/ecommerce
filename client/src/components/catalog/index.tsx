@@ -1,7 +1,7 @@
 import items from "./catalog.json";
 import styles from "./Catalog.module.scss";
 
-export default function Catalog(props) {
+export default function Catalog(props: { style: "menu" | "full" }) {
   let catalogStyle = "";
 
   if (props.style === "menu") {
@@ -13,7 +13,9 @@ export default function Catalog(props) {
   return (
     <ul className={catalogStyle}>
       {items.map((item) => (
-        <li key={item.id}>{item.name}</li>
+        <li key={item.id} className={styles.category}>
+          {item.name}
+        </li>
       ))}
     </ul>
   );

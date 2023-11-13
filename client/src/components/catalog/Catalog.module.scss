@@ -1,4 +1,27 @@
-.menu {
-  display: none;
+@import '../../styles/variables/variables';
 
+.menu {
+  width: 1440px;
+  height: 248px;
+  position: absolute;
+  top: 49px;
+  left: 229px;
+  padding-top: 40px;
+  display: none;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  background-color: $surface;
+  transition: all .77s ease-in-out;
+  cursor: default;
+  z-index: 1;
+}
+
+.category {
+  max-width: max-content;
+  cursor: pointer;
+  @include bold-text-s;
+  transition: color 0.15s ease-in-out;
+}
+
+.category:hover {
+  color: $primary
 }

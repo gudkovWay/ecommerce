@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./Header.module.scss";
 import Catalog from "../catalog";
+import Search from "../search";
 
 export default function Header() {
   return (
@@ -17,21 +18,24 @@ export default function Header() {
 
       <div className={styles.productActions}>
         <div className={styles.catalog}>
-          <Image
-            src="/header/menu.svg"
-            alt="Catalog Icon"
-            width={24}
-            height={24}
-          />
-          <a>
-            Каталог
-            <div>
+          <button className={styles.catalogBtn}>
+            <Image
+              src="/header/menu.svg"
+              alt="Catalog Icon"
+              width={24}
+              height={24}
+            />
+
+            <a>
+              Каталог
               <Catalog style={"menu"} />
-            </div>
-          </a>
+            </a>
+          </button>
         </div>
 
-        <div className={styles.search}>search</div>
+        <div className={styles.search}>
+          <Search />
+        </div>
       </div>
 
       <div className={styles.actions}>
@@ -41,7 +45,7 @@ export default function Header() {
               src="/header/favorite.svg"
               alt="favorite icon"
               width={24}
-              height={16}
+              height={24}
             />
             <li>
               <a>Избранное</a>
@@ -52,7 +56,7 @@ export default function Header() {
               src="header/orders.svg"
               alt="order icon"
               width={24}
-              height={16}
+              height={24}
             />
             <li>
               <a>Заказы</a>
@@ -63,7 +67,7 @@ export default function Header() {
               src="header/cart.svg"
               alt="basket icon"
               width={24}
-              height={16}
+              height={24}
             />
             <li>
               <a>Корзина</a>

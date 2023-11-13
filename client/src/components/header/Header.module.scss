@@ -7,7 +7,9 @@
   align-items: center;
   justify-content: space-around;
   gap: 40px;
-  background-color: $primary;
+  background-color: $surface;
+  padding: 0 15px;
+  z-index: 99;
 }
 
 .productActions {
@@ -16,13 +18,31 @@
   gap: 16px;
 
   .catalog {
-   a:hover {
-     div {
-       ul {display: grid}
-     }
-   }
-  }
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
+    .catalogBtn {
+      width: 140px;
+      height: 40px;
+      background-color: $secondary;
+      border-radius: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        @include text-s;
+        color: $on-secondary;
+      }
+      &:hover {
+        a ul {
+          display: grid
+        }
+      }
+    }
+  }
 }
 
 .actions {
@@ -31,11 +51,17 @@
     flex-flow: row nowrap;
     align-items: center;
     gap: 24px;
+    padding-top: 10px;
+    z-index: 11110
   }
   .action {
+    max-width: 65px;
+    max-height: 50px;
     display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
     align-items: center;
-    flex-flow: column
+    gap: 8px
   }
 }
 

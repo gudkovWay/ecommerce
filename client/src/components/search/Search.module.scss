@@ -1,0 +1,35 @@
+@import '../../styles/variables/variables';
+
+.form {
+
+  max-width: 374px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .searchIcon {
+    position: absolute;
+    right: 0;
+    margin: 8px
+  }
+
+  .input {
+    width: 374px;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid $secondary;
+    transition: all 0.1s ease-in;
+
+    &::placeholder {
+      @include text-s;
+      color: $hard;
+    }
+    &:focus {
+     @include secondary-shadow-m;
+     transform: scale(1.011);
+   }
+  }
+}
