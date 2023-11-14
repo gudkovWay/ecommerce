@@ -6,12 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api:download": "wget http://localhost:3000/api-yaml -O ./src/shared/api/schema.yaml",
+    "api:generate": "orval"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.8.3",
+    "axios": "^1.6.1",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.48.2",
     "sass": "^1.69.5"
   },
   "devDependencies": {
@@ -20,6 +25,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "orval": "^6.20.0",
+    "prettier": "^3.1.0",
     "typescript": "^5"
   }
 }

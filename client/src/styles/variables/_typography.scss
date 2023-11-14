@@ -4,7 +4,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-xs {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -13,7 +12,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-s {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -22,7 +20,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-m {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -31,7 +28,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-l {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -40,7 +36,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-xl {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -49,7 +44,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-xs {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -58,7 +52,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-s {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -67,7 +60,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-m {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -76,7 +68,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-l {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -85,7 +76,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-xl {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -94,7 +84,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-xs {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -103,7 +92,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-s {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -112,7 +100,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-m {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -121,7 +108,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-l {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -130,7 +116,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-xl {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -141,7 +126,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-xs-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 8px;
   font-style: normal;
   font-weight: 400;
@@ -150,7 +134,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-s-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -159,7 +142,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-m-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -168,7 +150,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-l-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -177,7 +158,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin text-xl-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -186,7 +166,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-xs-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 8px;
   font-style: normal;
   font-weight: 700;
@@ -195,7 +174,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-s-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -204,7 +182,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-m-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -213,7 +190,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-l-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -222,7 +198,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin bold-text-xl-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -231,7 +206,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-xs-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -240,7 +214,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-s-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -249,7 +222,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-m-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -258,7 +230,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-l-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -267,7 +238,6 @@ $primary-font: 'Rubik', sans-serif;
 
 @mixin header-text-xl-mobile {
   font-family: $primary-font;
-  color: $on-surface;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;

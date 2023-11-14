@@ -1,0 +1,527 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: AppController_getHello
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloWorldDto'
+  /auth/sign-up:
+    post:
+      operationId: AuthController_signUp
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignUpBodyDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_0
+        - Auth Controller
+  /auth/sign-in:
+    post:
+      operationId: AuthController_signIn
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInBodyDto'
+      responses:
+        '200':
+          description: ''
+      tags: *ref_0
+  /auth/sign-out:
+    post:
+      operationId: AuthController_signOut
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_0
+  /auth/session:
+    get:
+      operationId: AuthController_getSessionInfo
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSessionInfoDto'
+      tags: *ref_0
+  /account:
+    get:
+      operationId: AccountController_getAccount
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDto'
+      tags: &ref_1
+        - Account(logic outside of auth)
+    patch:
+      operationId: AccountController_patchAccount
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchAccountDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDto'
+      tags: *ref_1
+  /brand/create:
+    post:
+      operationId: BrandController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBrandDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_2
+        - brands
+  /brand:
+    get:
+      operationId: BrandController_findAll
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_2
+  /type/create:
+    post:
+      operationId: TypeController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTypeDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_3
+        - Type
+  /type:
+    get:
+      operationId: TypeController_findAll
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_3
+  /products:
+    post:
+      operationId: ProductsController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductsDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_4
+        - Products
+    get:
+      operationId: ProductsController_findAll
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_4
+  /products/{id}:
+    get:
+      operationId: ProductsController_findOneWithRating
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_4
+    patch:
+      operationId: ProductsController_update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_4
+    delete:
+      operationId: ProductsController_remove
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_4
+  /products/full/{id}:
+    get:
+      operationId: ProductsController_findOneWithReview
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_4
+  /reviews:
+    post:
+      operationId: ReviewsController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReviewDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_5
+        - Reviews
+    get:
+      operationId: ReviewsController_findAll
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_5
+  /reviews/{id}:
+    get:
+      operationId: ReviewsController_findOne
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_5
+    patch:
+      operationId: ReviewsController_update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_5
+    delete:
+      operationId: ReviewsController_remove
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_5
+  /order:
+    post:
+      operationId: OrderController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderDto'
+      responses:
+        '201':
+          description: ''
+      tags: &ref_6
+        - OrderService
+    get:
+      operationId: OrderController_findAll
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags: *ref_6
+  /order/{id}:
+    get:
+      operationId: OrderController_findOne
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags: *ref_6
+    patch:
+      operationId: OrderController_update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOrderDto'
+      responses:
+        '200':
+          description: ''
+      tags: *ref_6
+info:
+  title: Block list
+  description: ''
+  version: 1.0.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    HelloWorldDto:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
+    SignUpBodyDto:
+      type: object
+      properties:
+        phone:
+          type: string
+          example: '78005553535'
+        password:
+          type: string
+          example: '1234'
+        firstName:
+          type: string
+          example: Вася
+        lastName:
+          type: string
+          example: Пупкин
+        birthDate:
+          type: string
+          example: 01.01.2000
+        city:
+          type: string
+          example: Москва
+        region:
+          type: string
+          example: Рассия
+        role:
+          type: string
+          example: USER
+      required:
+        - phone
+        - password
+        - firstName
+        - lastName
+        - birthDate
+        - city
+        - region
+        - role
+    SignInBodyDto:
+      type: object
+      properties:
+        phone:
+          type: string
+          example: '78005553535'
+        password:
+          type: string
+          example: '1234'
+      required:
+        - phone
+        - password
+    GetSessionInfoDto:
+      type: object
+      properties:
+        id:
+          type: number
+        phone:
+          type: string
+        iat:
+          type: number
+        exp:
+          type: number
+      required:
+        - id
+        - phone
+        - iat
+        - exp
+    AccountDto:
+      type: object
+      properties:
+        id:
+          type: number
+        ownerId:
+          type: number
+        isSetRate:
+          type: boolean
+      required:
+        - id
+        - ownerId
+        - isSetRate
+    PatchAccountDto:
+      type: object
+      properties:
+        isSetRate:
+          type: boolean
+      required:
+        - isSetRate
+    CreateBrandDto:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+      required:
+        - id
+        - name
+    CreateTypeDto:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+      required:
+        - id
+        - name
+    CreateProductsDto:
+      type: object
+      properties:
+        name:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        price:
+          type: number
+        sale:
+          type: boolean
+        availibility:
+          type: string
+          enum:
+            - IN_STORE
+            - ONLINE
+        reviews:
+          type: object
+        tags:
+          type: object
+        description:
+          type: object
+        type:
+          type: object
+        brand:
+          type: object
+      required:
+        - name
+        - createdAt
+        - updatedAt
+        - price
+        - sale
+        - availibility
+        - reviews
+        - tags
+        - description
+        - type
+        - brand
+    CreateReviewDto:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        rating:
+          type: number
+        productId:
+          type: number
+      required:
+        - title
+        - content
+        - rating
+        - productId
+    CreateOrderDto:
+      type: object
+      properties:
+        id:
+          type: number
+        total:
+          type: number
+        product:
+          type: object
+        userId:
+          type: number
+      required:
+        - id
+        - total
+        - product
+        - userId
+    UpdateOrderDto:
+      type: object
+      properties:
+        id:
+          type: number
+        total:
+          type: number
+        product:
+          type: object
+        userId:
+          type: number

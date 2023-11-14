@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/header";
+import SignIn from "@/components/sign-in";
+import SignUp from "@/components/sign-up";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        {/* <SignIn /> */}
+        <SignUp />
       </main>
     </>
   );
