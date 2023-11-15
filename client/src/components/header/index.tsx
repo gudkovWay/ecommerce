@@ -1,19 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useDispatch} from "react-redux";
+
+import Catalog from "@/widgets/catalog";
+import Search from "@/features/search";
 import styles from "./Header.module.scss";
-import Catalog from "../catalog";
-import Search from "../search";
+import { closeModal, openModal } from "@/redux/slices/modalSlice";
 
 export default function Header() {
+  const dispatch = useDispatch();
+
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image
-          className={styles.logoDesktop}
-          src="/logo/headerDesktop.svg"
-          alt="Logo"
-          width={152}
-          height={32}
-        />
+        <Link href="/">
+          <Image
+            className={styles.logoDesktop}
+            src="/logo/headerDesktop.svg"
+            alt="Logo"
+            width={152}
+            height={32}
+          />
+        </Link>
       </div>
 
       <div className={styles.productActions}>
@@ -76,6 +85,12 @@ export default function Header() {
         </ul>
       </div>
 
+      <div className={styles.auth}>
+        <button className={styles.signInBtn} onClick={() => dispatch(openModal())}>Вход</button>
+        <button className={styles.signUpBtn}>Регистрация</button>
+      </div>
+
+      {/*
       <div className={styles.user}>
         <ul>
           <div className={styles.userBar}>
@@ -103,6 +118,7 @@ export default function Header() {
           </div>
         </ul>
       </div>
+*/}
     </header>
   );
 }

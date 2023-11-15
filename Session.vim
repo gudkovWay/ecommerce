@@ -13,12 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +3 ~/Documents/projects/selfDev/severYanochki/client/src/components/sign-in/index.tsx
-badd +41 ~/Documents/projects/selfDev/severYanochki/client/src/components/sign-in/Signin.module.scss
-badd +2 ~/Documents/projects/selfDev/severYanochki/client/src/components/sign-in/signInForm.tsx
+badd +82 ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
+badd +5 ~/Documents/projects/selfDev/severYanochki/client/src/pages/_document.tsx
+badd +5 ~/Documents/projects/selfDev/severYanochki/client/src/features/auth/sign-in/index.tsx
+badd +2 ~/Documents/projects/selfDev/severYanochki/client/src/redux/store.ts
 argglobal
 %argdel
-edit ~/Documents/projects/selfDev/severYanochki/client/src/components/sign-in/signInForm.tsx
+edit ~/Documents/projects/selfDev/severYanochki/client/src/redux/store.ts
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -35,12 +36,12 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 30 + 71) / 142)
-exe 'vert 2resize ' . ((&columns * 111 + 71) / 142)
+exe 'vert 1resize ' . ((&columns * 30 + 71) / 143)
+exe 'vert 2resize ' . ((&columns * 112 + 71) / 143)
 argglobal
 enew
 file NvimTree_1
-balt ~/Documents/projects/selfDev/severYanochki/client/src/components/sign-in/signInForm.tsx
+balt ~/Documents/projects/selfDev/severYanochki/client/src/components/header/index.tsx
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -51,6 +52,7 @@ setlocal fdn=20
 setlocal nofen
 wincmd w
 argglobal
+balt ~/Documents/projects/selfDev/severYanochki/client/src/pages/_document.tsx
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -61,16 +63,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 14) / 28)
+let s:l = 7 - ((6 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 7
 normal! 0
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 30 + 71) / 142)
-exe 'vert 2resize ' . ((&columns * 111 + 71) / 142)
+exe 'vert 1resize ' . ((&columns * 30 + 71) / 143)
+exe 'vert 2resize ' . ((&columns * 112 + 71) / 143)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

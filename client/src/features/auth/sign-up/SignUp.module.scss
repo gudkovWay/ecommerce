@@ -1,0 +1,107 @@
+@import '../../../styles/base/variables';
+.signUp {
+  max-width: 690px;
+  height: 990px;
+  position: fixed;
+  left: 50%;
+  top: 62%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 40px;
+  background-color: $surface;
+  z-index: 1111;
+  overflow-y: scroll;
+}
+
+
+.signUpHeader {
+  @include header-text-s;
+  color: $on-surface;
+  margin-top: 70px;
+}
+
+.signUpForm {
+  width: 690px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap:  0px;
+}
+.requiredFields{
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+  gap: 16px 32px;
+}
+.fieldsHeader{
+  @include header-text-xs;
+  color: $on-surface;
+}
+
+.signUpForm {
+  justify-content: center;
+  gap: 32px;
+  label {
+
+    @include text-s;
+    color: $hard;
+    display: flex;
+    flex-flow: column;
+    cursor: default;
+
+    input {
+      width: 260px;
+      height: 40px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid $hard;
+      caret-color: $secondary;
+      transition: all .17s ease-in;
+      color: $on-surface;
+      @include text-s;
+
+      &:focus {
+        transform: scale(1.027);
+        border: 1px solid $secondary;
+        color: $on-surface;
+        @include text-s;
+        @include secondary-shadow-m;
+      }
+
+    }
+  }
+}
+
+.disabled {
+  background-color: $light;
+  border: 1px solid $light;
+}
+.optionalFields {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  gap: 16px 32px;
+
+}
+
+.loyalCart {
+
+  input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $light;
+  background-color: $surface;
+  padding: 0;
+
+  &:checked {
+    content: "";
+
+    background-color: $secondary;
+  }
+}
+
+}

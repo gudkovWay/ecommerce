@@ -3,7 +3,6 @@ import { useState } from "react";
 import styles from "./Signin.module.scss";
 import { useMutation } from "@tanstack/react-query";
 import { authControllerSignIn } from "@/shared/api/generated";
-import { useRouter } from "next/router";
 
 type Inputs = {
   phone: string;
@@ -11,7 +10,6 @@ type Inputs = {
 };
 
 export default function SignInForm() {
-  const router = useRouter();
   const {
     register,
     handleSubmit,

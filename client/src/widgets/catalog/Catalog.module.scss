@@ -1,4 +1,4 @@
-@import '../../styles/variables/variables';
+@import '../../styles/base/variables';
 
 .menu {
   width: 1440px;
@@ -20,8 +20,8 @@
   cursor: pointer;
   @include bold-text-s;
   transition: color 0.15s ease-in-out;
-}
-
-.category:hover {
-  color: $primary
+  color: $on-surface;
+  &:hover {
+    color: $primary
+  }
 }

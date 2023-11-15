@@ -1,11 +1,16 @@
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
+import { AppProvider } from "./api/app-provider";
+
 import "../styles/globals.scss";
 import Home from "./Home";
-import { AppProvider } from "./api/app-provider";
 
 export default function App() {
   return (
-    <AppProvider>
-      <Home />
-    </AppProvider>
+    <Provider store={store}>
+      <AppProvider>
+        <Home />
+      </AppProvider>
+    </Provider>
   );
 }
