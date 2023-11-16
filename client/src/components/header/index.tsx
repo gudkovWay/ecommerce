@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Catalog from "@/widgets/catalog";
 import Search from "@/features/search";
+import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
+import { openModal as openSignUp } from "@/features/auth/sign-up/SignUpSlice";
+
 import styles from "./Header.module.scss";
-import { closeModal, openModal } from "@/redux/slices/modalSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
-
 
   return (
     <header className={styles.header}>
@@ -86,8 +87,18 @@ export default function Header() {
       </div>
 
       <div className={styles.auth}>
-        <button className={styles.signInBtn} onClick={() => dispatch(openModal())}>Вход</button>
-        <button className={styles.signUpBtn}>Регистрация</button>
+        <button
+          className={styles.signInBtn}
+          onClick={() => dispatch(openSignIn())}
+        >
+          Вход
+        </button>
+        <button
+          onClick={() => dispatch(openSignUp())}
+          className={styles.signUpBtn}
+        >
+          Регистрация
+        </button>
       </div>
 
       {/*

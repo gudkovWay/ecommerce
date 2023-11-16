@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import modalReducer from "./slices/modalSlice";
+import signInReducer from "@/features/auth/sign-in/SignInSlice";
+import signUpReducer from "@/features/auth/sign-up/SignUpSlice";
 
 export const store = configureStore({
-  reducer: { modal: modalReducer },
+  reducer: { signIn: signInReducer, signUp: signUpReducer },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

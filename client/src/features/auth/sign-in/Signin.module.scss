@@ -105,3 +105,15 @@
   right: 0;
   background-color: $lightest;
 }
+
+.backButton {
+  width: 111px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11.5px;
+  @include text-xs;
+  color: $hardest;
+
+}

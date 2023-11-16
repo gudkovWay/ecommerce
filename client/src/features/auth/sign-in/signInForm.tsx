@@ -1,12 +1,22 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useState } from "react";
-import styles from "./Signin.module.scss";
 import { useMutation } from "@tanstack/react-query";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentStep } from "./SignInSlice";
+
+import styles from "./Signin.module.scss";
 import { authControllerSignIn } from "@/shared/api/generated";
 
 type Inputs = {
-  phone: string;
+  phoneNumber: string;
   password: string;
+};
+
+const normalizePhoneNumber = (value: string) => {
+  const phoneNumber = value.replace(/[^\d]/g, "");
+  if (phoneNumber.length > 11) {
+    return phoneNumber.slice(0, 11);
+  }
+  return phoneNumber;
 };
 
 export default function SignInForm() {
@@ -17,6 +27,13 @@ export default function SignInForm() {
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => signInMutation.mutate(data);
 
+  const dispatch = useDispatch();
+  const currentStep = useSelector((state: any) => state.signIn.currentStep);
+
+  const changeCurrentStep = (step: number) => {
+    dispatch(setCurrentStep(step));
+  };
+
   const signInMutation = useMutation({
     mutationFn: () => authControllerSignIn,
     onSuccess() {
@@ -24,32 +41,26 @@ export default function SignInForm() {
     },
   });
 
-  const [currentStep, useCurrentStep] = useState(1);
-
-  const handlePrevStep = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    useCurrentStep(1);
-  };
-
-  const handleNextStep = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    useCurrentStep(2);
-  };
   return (
     <>
       {currentStep === 1 ? (
         <form className={styles.signInForm}>
           <label className={styles.formLabel}>Телефон</label>
           <input
-            type="text"
+            type="tel"
             placeholder="Введите ваш номер телефона"
-            {...register("phone", { required: true })}
+            {...register("phoneNumber", { required: true })}
+            defaultValue="+7"
+            onChange={(e) => {
+              e.target.value = normalizePhoneNumber(e.target.value);
+            }}
           />
-          {errors.phone && <span>Введите номер телефона!</span>}
+
+          {errors.phoneNumber?.message && <span>Введите номер телефона!</span>}
           <button
             type="button"
             className={styles.signInButton}
-            onClick={handleNextStep}
+            onClick={() => changeCurrentStep(2)}
           >
             Вход
           </button>
@@ -62,7 +73,7 @@ export default function SignInForm() {
             placeholder="Введите ваш пароль"
             {...register("password", { required: true })}
           />
-          {errors.password && <span>Введите пароль!</span>}
+          {errors.password?.message && <span>Введите пароль!</span>}
           <button
             className={styles.signInButton}
             type="submit"
