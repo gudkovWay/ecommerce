@@ -35,7 +35,7 @@
   }
    &:active {
     @include secondary-shadow-xs;
-    filter: blur(0.2px);
+    filter: blur(2px);
     transform: translateY(5px);
     opacity: 0.9
    }

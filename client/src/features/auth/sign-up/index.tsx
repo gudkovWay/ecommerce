@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal, setCurrentStep } from "./SignUpSlice";
+import { RootState } from "@/redux/store";
 import Image from "next/image";
 
 import SignUpForm from "./signUpForm";
-import styles from "./SignUp.module.scss";
+import { closeModal } from "./SignUpSlice";
 import CloseButton from "@/shared/buttons/utils/CloseButton";
+import styles from "./SignUp.module.scss";
 
 export default function SignUp() {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state: any) => state.signUp.isOpen);
+  const isOpen = useSelector((state: RootState) => state.signUp.isOpen);
 
   if (isOpen) {
     return (

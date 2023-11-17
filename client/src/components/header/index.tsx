@@ -26,7 +26,6 @@ export default function Header() {
           />
         </Link>
       </div>
-
       <div className={styles.productActions}>
         <div className={styles.catalog}>
           <button className={styles.catalogBtn}>
@@ -59,7 +58,9 @@ export default function Header() {
               height={24}
             />
             <li>
-              <a>Избранное</a>
+              <a className={styles.link} data-replace="Избранное">
+                <span>Избранное</span>
+              </a>
             </li>
           </div>
           <div className={styles.action}>
@@ -70,7 +71,9 @@ export default function Header() {
               height={24}
             />
             <li>
-              <a>Заказы</a>
+              <a className={styles.link} data-replace="Заказы">
+                <span>Заказы</span>
+              </a>
             </li>
           </div>
           <div className={styles.action}>
@@ -81,12 +84,13 @@ export default function Header() {
               height={24}
             />
             <li>
-              <a>Корзина</a>
+              <a className={styles.link} data-replace="Корзина">
+                <span>Корзина</span>
+              </a>
             </li>
           </div>
         </ul>
       </div>
-
       <div className={styles.auth}>
         <button
           className={styles.signInBtn}

@@ -2,17 +2,20 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal, setCurrentStep } from "./SignInSlice";
 import { openModal as openSignUpModal } from "../sign-up/SignUpSlice";
+import { RootState } from "@/redux/store";
 
+import SignInForm from "./signInForm";
 import CloseButton from "@/shared/buttons/utils/CloseButton";
 import BackButton from "@/shared/buttons/utils/BackButton";
-import SignInForm from "./signInForm";
-import styles from "./Signin.module.scss";
 import SecondaryButton from "@/shared/buttons/secondary";
+import styles from "./Signin.module.scss";
 
 export default function SignIn() {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state: any) => state.signIn.isOpen);
-  const currentStep = useSelector((state: any) => state.signIn.currentStep);
+  const isOpen = useSelector((state: RootState) => state.signIn.isOpen);
+  const currentStep = useSelector(
+    (state: RootState) => state.signIn.currentStep,
+  );
 
   const changeCurrentStep = (step: number) => {
     dispatch(setCurrentStep(step));
