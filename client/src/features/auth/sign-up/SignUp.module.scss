@@ -1,10 +1,10 @@
 @import '../../../styles/base/variables';
 .signUp {
   max-width: 690px;
-  height: 990px;
+  max-height: 890px;
   position: fixed;
   left: 50%;
-  top: 62%;
+  top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-flow: column;
@@ -19,7 +19,7 @@
 .signUpHeader {
   @include header-text-s;
   color: $on-surface;
-  margin-top: 70px;
+  padding-top: 20px;
 }
 
 .signUpForm {
@@ -103,5 +103,12 @@
     background-color: $secondary;
   }
 }
+}
 
+.formButtons {
+  width: 260px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-flow: column nowrap;
 }

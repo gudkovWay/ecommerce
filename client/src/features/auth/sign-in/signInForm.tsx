@@ -3,8 +3,9 @@ import { useMutation } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentStep } from "./SignInSlice";
 
-import styles from "./Signin.module.scss";
 import { authControllerSignIn } from "@/shared/api/generated";
+import styles from "./Signin.module.scss";
+import PrimaryButton from "@/shared/buttons/primary";
 
 type Inputs = {
   phoneNumber: string;
@@ -57,13 +58,11 @@ export default function SignInForm() {
           />
 
           {errors.phoneNumber?.message && <span>Введите номер телефона!</span>}
-          <button
-            type="button"
-            className={styles.signInButton}
-            onClick={() => changeCurrentStep(2)}
-          >
-            Вход
-          </button>
+          <PrimaryButton
+            buttonFn={() => changeCurrentStep(2)}
+            buttonText="Вход"
+            buttonType="button"
+          />
         </form>
       ) : (
         <form className={styles.signInForm} onSubmit={handleSubmit(onSubmit)}>
@@ -74,13 +73,11 @@ export default function SignInForm() {
             {...register("password", { required: true })}
           />
           {errors.password?.message && <span>Введите пароль!</span>}
-          <button
-            className={styles.signInButton}
-            type="submit"
-            disabled={signInMutation.isLoading}
-          >
-            Подтвердить
-          </button>
+          <PrimaryButton
+            buttonFn={() => console.log("submit button")}
+            buttonText="Подтвердить"
+            buttonType="submit"
+          />
         </form>
       )}
     </>

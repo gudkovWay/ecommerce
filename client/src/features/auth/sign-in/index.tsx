@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal, setCurrentStep } from "./SignInSlice";
+import { openModal as openSignUpModal } from "../sign-up/SignUpSlice";
 
+import CloseButton from "@/shared/buttons/utils/CloseButton";
+import BackButton from "@/shared/buttons/utils/BackButton";
 import SignInForm from "./signInForm";
 import styles from "./Signin.module.scss";
+import SecondaryButton from "@/shared/buttons/secondary";
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -14,6 +18,11 @@ export default function SignIn() {
     dispatch(setCurrentStep(step));
   };
 
+  const openSignUp = () => {
+    dispatch(closeModal());
+    dispatch(openSignUpModal());
+  };
+
   if (isOpen) {
     return (
       <div className={styles.signIn}>
@@ -21,37 +30,27 @@ export default function SignIn() {
         <SignInForm />
         <div className={styles.secondaryButtons}>
           {currentStep === 1 ? (
-            <button className={styles.secondaryButton}>Регистрация</button>
+            <SecondaryButton
+              buttonFn={() => openSignUp()}
+              buttonText="Регистрация"
+              buttonType="button"
+            />
           ) : (
-            <button
-              onClick={() => changeCurrentStep(1)}
-              className={styles.backButton}
-            >
-              <Image
-                src="auth/arrow-left.svg"
-                alt="arrow"
-                width={24}
-                height={24}
-              />
-              Вернуться
-            </button>
+            <BackButton
+              buttonFn={() => changeCurrentStep(1)}
+              buttonType="button"
+              buttonText="Вернуться"
+            />
           )}
           <button className={styles.forgetPasswordButton}>
             Забыли пароль?
           </button>
         </div>
-        <button
-          className={styles.closeButton}
-          onClick={() => dispatch(closeModal())}
-        >
-          <Image
-            className={styles.closeIcon}
-            src="auth/close.svg"
-            alt="close"
-            width={13}
-            height={13}
-          />
-        </button>
+        <CloseButton
+          buttonFn={() => dispatch(closeModal())}
+          buttonType="button"
+          buttonText="Закрыть"
+        />
       </div>
     );
   }

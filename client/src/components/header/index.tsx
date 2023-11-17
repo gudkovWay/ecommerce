@@ -8,6 +8,7 @@ import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
 import { openModal as openSignUp } from "@/features/auth/sign-up/SignUpSlice";
 
 import styles from "./Header.module.scss";
+import SecondaryButton from "@/shared/buttons/secondary";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -93,12 +94,11 @@ export default function Header() {
         >
           Вход
         </button>
-        <button
-          onClick={() => dispatch(openSignUp())}
-          className={styles.signUpBtn}
-        >
-          Регистрация
-        </button>
+        <SecondaryButton
+          buttonText="Регистрация"
+          buttonType="button"
+          buttonFn={() => dispatch(openSignUp())}
+        />
       </div>
 
       {/*
