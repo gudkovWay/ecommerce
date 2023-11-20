@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import styles from "./SignUpForm.module.scss";
+import PrimaryButton from "@/shared/ui/buttons/primary";
+import SecondaryButton from "@/shared/ui/buttons/secondary";
 import ChooseGender from "./gender";
-import styles from "./SignUp.module.scss";
-import PrimaryButton from "@/shared/buttons/primary";
-import SecondaryButton from "@/shared/buttons/secondary";
+import UserSelect from "./select";
 
 const SignUpForm = () => {
   const { register, controller, reset } = useForm();
@@ -16,7 +17,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <form className={styles.signUpForm}>
+    <form className={styles.signUpForm} onSubmit={() => console.log("submit")}>
       <div className={styles.requiredFields}>
         <label>
           Телефон
@@ -35,7 +36,7 @@ const SignUpForm = () => {
 
         <label>
           Регион
-          <input type="text" />
+          <UserSelect value="regions" />
         </label>
 
         <label>
@@ -45,7 +46,7 @@ const SignUpForm = () => {
 
         <label>
           Населенный пункт
-          <input type="text" />
+          <UserSelect value="city" />
         </label>
 
         <label>
@@ -91,7 +92,7 @@ const SignUpForm = () => {
       <div className={styles.formButtons}>
         <PrimaryButton
           buttonFn={() => console.log("pressed primary button")}
-          buttonType="button"
+          buttonType="submit"
           buttonText="Продолжить"
         />
 

@@ -1,0 +1,16 @@
+@import '@/styles/base/variables';
+
+.userSelect {
+  width: 260px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: $on-surface;
+  background-color: $surface;
+  @include default-shadow-xs;
+
+  option {
+    @include text-s;
+    color: $on-surface;
+  }
+}

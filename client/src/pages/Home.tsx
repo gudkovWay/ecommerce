@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "@/components/header";
+import Header from "@/widgets/header";
 import SignUp from "@/features/auth/sign-up";
 import SignIn from "@/features/auth/sign-in";
 import { useSelector } from "react-redux";

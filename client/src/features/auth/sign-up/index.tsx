@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
-import Image from "next/image";
+import { RootState } from "@/shared/lib/redux/store";
 
-import SignUpForm from "./signUpForm";
+import SignUpForm from "./use-form/signUpForm";
 import { closeModal } from "./SignUpSlice";
-import CloseButton from "@/shared/buttons/utils/CloseButton";
+import CloseButton from "@/shared/ui/buttons/utils/CloseButton";
 import styles from "./SignUp.module.scss";
 
 export default function SignUp() {

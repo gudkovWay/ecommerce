@@ -15,10 +15,7 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: [
-      'http://localhost:3001',
-      'chrome-extension://jcmfnmkpolncpgmjlhlknajklonbkcdc',
-    ],
+    origin: ['http://localhost:3001'],
     credentials: true,
   });
   app.useGlobalPipes(new ValidationPipe());

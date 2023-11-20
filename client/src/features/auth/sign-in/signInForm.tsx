@@ -5,7 +5,7 @@ import { setCurrentStep } from "./SignInSlice";
 
 import { authControllerSignIn } from "@/shared/api/generated";
 import styles from "./Signin.module.scss";
-import PrimaryButton from "@/shared/buttons/primary";
+import PrimaryButton from "@/shared/ui/buttons/primary";
 
 type Inputs = {
   phoneNumber: string;

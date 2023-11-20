@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 
-import Catalog from "@/widgets/catalog";
-import Search from "@/features/search";
+import Catalog from "@/features/userSearch/catalog";
+import Search from "@/features/userSearch/search";
 import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
 import { openModal as openSignUp } from "@/features/auth/sign-up/SignUpSlice";
 
 import styles from "./Header.module.scss";
-import SecondaryButton from "@/shared/buttons/secondary";
+import SecondaryButton from "@/shared/ui/buttons/secondary";
 
-export default function Header() {
+export const Header = () => {
   const dispatch = useDispatch();
 
   return (

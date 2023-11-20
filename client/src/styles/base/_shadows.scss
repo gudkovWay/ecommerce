@@ -1,20 +1,65 @@
+// Shadows Color;
+$default-color: rgba(0,0,0,0.1);
+$primary-color: rgba(255,102,51,0.2);
+$secondary-color: rgba(112, 192, 91, 0.2);
+
+// Default shadows
+
+@mixin default-shadow-xs {
+  box-shadow: 1px 2px 4px $default-color;
+}
+
+@mixin default-shadow-s {
+  box-shadow: 2px 4px 8px $default-color;
+}
+
+@mixin default-shadow-m {
+box-shadow: 4px 8px 16px $default-color;
+}
+@mixin default-shadow-l {
+box-shadow: 8px 16px 32px $default-color;
+}
+@mixin default-shadow-xl {
+box-shadow: 16px 32px 64px $default-color;
+}
+
+
+// Primary shadows
+
+@mixin primary-shadow-xs {
+  box-shadow: 1px 2px 4px $primary-color;
+}
+
+@mixin primary-shadow-s {
+  box-shadow: 2px 4px 8px $primary-color;
+}
+
+@mixin primary-shadow-m {
+box-shadow: 4px 8px 16px $primary-color;
+}
+@mixin primary-shadow-l {
+box-shadow: 8px 16px 32px $primary-color;
+}
+@mixin primary-shadow-xl {
+box-shadow: 16px 32px 64px $primary-color;
+}
 
 // Secondary shadows
 
 @mixin secondary-shadow-xs {
-  box-shadow: 1px 2px 4px rgba(112, 192, 91, 0.2);
+  box-shadow: 1px 2px 4px $secondary-color;
 }
 
 @mixin secondary-shadow-s {
-box-shadow: 2px 4px 8px rgba(112, 192, 91, 0.2);
+box-shadow: 2px 4px 8px $secondary-color;
 }
 
 @mixin secondary-shadow-m {
-box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+box-shadow: 4px 8px 16px $secondary-color;
 }
 @mixin secondary-shadow-l {
-box-shadow: 8px 16px 32px rgba(112, 192, 91, 0.2);
+box-shadow: 8px 16px 32px $secondary-color;
 }
 @mixin secondary-shadow-xl {
-box-shadow: 16px 32px 64px rgba(112, 192, 91, 0.2);
+box-shadow: 16px 32px 64px $secondary-color;
 }
