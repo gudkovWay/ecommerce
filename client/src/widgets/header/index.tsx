@@ -1,3 +1,9 @@
-import { Header } from "./ui";
+import { UnAuthHeader } from "./ui";
+import { AuthHeader } from "./ui/userHeader";
+import { ManagerHeader } from "./ui/managerHeader";
 
-export default Header
+const Header = () => {
+  return <UnAuthHeader />;
+};
+
+export default Header;

@@ -1,8 +1,11 @@
 import Head from "next/head";
+import { useSelector } from "react-redux";
+
 import Header from "@/widgets/header";
 import SignUp from "@/features/auth/sign-up";
 import SignIn from "@/features/auth/sign-in";
-import { useSelector } from "react-redux";
+import WelcomeSlider from "@/features/slider";
+import Product from "@/entities/product";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
@@ -21,6 +24,8 @@ export default function Home() {
         <Header />
         <SignUp />
         <SignIn />
+        <WelcomeSlider />
+        <Product />
       </main>
     </>
   );

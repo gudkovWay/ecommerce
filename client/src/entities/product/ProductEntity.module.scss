@@ -1,0 +1,8 @@
+@import "@/styles/base/variables";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 80px 116px;
+}

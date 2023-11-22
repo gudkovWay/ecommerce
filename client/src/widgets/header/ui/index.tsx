@@ -10,7 +10,7 @@ import { openModal as openSignUp } from "@/features/auth/sign-up/SignUpSlice";
 import styles from "./Header.module.scss";
 import SecondaryButton from "@/shared/ui/buttons/secondary";
 
-export const Header = () => {
+export const UnAuthHeader = () => {
   const dispatch = useDispatch();
 
   return (
@@ -48,49 +48,6 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className={styles.actions}>
-        <ul>
-          <div className={styles.action}>
-            <Image
-              src="/header/favorite.svg"
-              alt="favorite icon"
-              width={24}
-              height={24}
-            />
-            <li>
-              <a className={styles.link} data-replace="Избранное">
-                <span>Избранное</span>
-              </a>
-            </li>
-          </div>
-          <div className={styles.action}>
-            <Image
-              src="header/orders.svg"
-              alt="order icon"
-              width={24}
-              height={24}
-            />
-            <li>
-              <a className={styles.link} data-replace="Заказы">
-                <span>Заказы</span>
-              </a>
-            </li>
-          </div>
-          <div className={styles.action}>
-            <Image
-              src="header/cart.svg"
-              alt="basket icon"
-              width={24}
-              height={24}
-            />
-            <li>
-              <a className={styles.link} data-replace="Корзина">
-                <span>Корзина</span>
-              </a>
-            </li>
-          </div>
-        </ul>
-      </div>
       <div className={styles.auth}>
         <button
           className={styles.signInBtn}
@@ -104,36 +61,6 @@ export const Header = () => {
           buttonFn={() => dispatch(openSignUp())}
         />
       </div>
-
-      {/*
-      <div className={styles.user}>
-        <ul>
-          <div className={styles.userBar}>
-            <Image
-              className={styles.avatar}
-              src="/header/user.png"
-              alt="user icon"
-              width={24}
-              height={16}
-            />
-            <a>Elliot</a>
-          </div>
-          <div className={styles.userMenu}>
-            <li>
-              <a>
-                <Image
-                  className={styles.userIcon}
-                  src="header/arrowDown.svg"
-                  alt="buttond Down icon"
-                  width={13}
-                  height={7}
-                />
-              </a>
-            </li>
-          </div>
-        </ul>
-      </div>
-*/}
     </header>
   );
-}
+};
