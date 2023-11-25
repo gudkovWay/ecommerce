@@ -1,12 +1,12 @@
-import ProductSales from "./ui";
+import ProductSales from "./ui/sales";
 import styles from "./ui/Product.module.scss";
 
-const Product = () => {
+const Products = () => {
   return (
-    <section className={styles.product}>
+    <section className={styles.products}>
       <ProductSales />
     </section>
   );
 };
 
-export default Product;
+export default Products;

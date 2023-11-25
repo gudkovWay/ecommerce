@@ -1,6 +1,6 @@
 @import "@/styles/base/variables";
 
-.product {
+.products {
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,10 +26,96 @@
         color: $on-surface;
       }
       a {
+        width: 168px;
         @include text-s;
+        color: $hardest;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-left: 8px;
+        gap: 8px;
       }
     }
 
-    &__list {}
+    &__list {
+      max-width: 1210px;
+      max-height: 369px;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 40px;
+
+      .product__card {
+        width: 272px;
+        height: 349px;
+        background-color: $surface;
+        border-radius: 4px;
+        @include default-shadow-xs;
+        transition: all .27s ease-in;
+
+        &:hover {
+          @include primary-shadow-m;
+        }
+
+        &__image {}
+
+        &__content {
+          width: 256px;
+          height: 189px;
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 8px;
+          padding: 8px;
+
+          &__name {
+            max-width: 256px;
+            @include text-s;
+            color: $on-surface;
+          }
+          &__button {
+            width: 256px;
+            height:40px;
+            border: 1px solid $secondary;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include text-s;
+            color: $secondary;
+            transition: all .27s ease-in;
+
+            &:hover {
+              background-color: $primary;
+              color: $on-primary;
+              border: 1px solid $primary;
+            }
+          }
+
+          &__price{
+            height: 45px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            &__discount{
+              @include bold-text-m;
+              color: $on-surface;
+              p {
+                @include text-xs;
+                color: $light;
+                }
+              }
+            &__real{
+              @include text-s;
+              color: $hardest;
+
+              p {
+                @include text-xs;
+                color: $light;
+              }
+            }
+          }
+      }
+      }
+    }
   }
 }

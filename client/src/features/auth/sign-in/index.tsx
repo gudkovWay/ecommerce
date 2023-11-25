@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal, setCurrentStep } from "./SignInSlice";
 import { openModal as openSignUpModal } from "../sign-up/SignUpSlice";
 import { RootState } from "@/shared/lib/redux/store";
 
-import SignInForm from "./signInForm";
+import SignInForm from "./ui/signInForm";
 import CloseButton from "@/shared/ui/buttons/utils/CloseButton";
 import BackButton from "@/shared/ui/buttons/utils/BackButton";
 import SecondaryButton from "@/shared/ui/buttons/secondary";

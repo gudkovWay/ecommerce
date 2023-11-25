@@ -5,7 +5,7 @@ import Header from "@/widgets/header";
 import SignUp from "@/features/auth/sign-up";
 import SignIn from "@/features/auth/sign-in";
 import WelcomeSlider from "@/features/slider";
-import Product from "@/entities/product";
+import Products from "@/entities/product";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
@@ -25,7 +25,7 @@ export default function Home() {
         <SignUp />
         <SignIn />
         <WelcomeSlider />
-        <Product />
+        <Products />
       </main>
     </>
   );

@@ -6,8 +6,8 @@ Hello friend.
 <br>
 First of all: this project in other repo bcs its big full-stack project. Watch other projects u can in [this repo](https://github.com/gudkovWay/projects).
 <br>
-The second point its: 
-### 💾 Launch: 
+The second point its:
+### 💾 Launch:
 
 <b>Create new server via PostgreSQL</b>
 - **First download PostgreSQL**
@@ -55,13 +55,13 @@ npm run dev
    </tr>
    <tr>
       <td align="center">
-      
-      
-      
+
+
+
      PLEASE FOR CORRECTLY WORK IN DEV MODE MAKE SURE
      FIRST U LAUNCH SERVER PART AND THIS LAUNCHING IN LOCALHOST:3000
      THEN U LAUNCH CLIENT PART AND THIS LAUNCHING IN LOCALHOST:3001
-     
+
    </tr>
    </table>
 
@@ -79,7 +79,7 @@ This is the description of the project I talked about in the repository descript
 | tricks by bloger   | null                                                                        |
 | tricks by me       |                   |
 | what I've learned  | work via ORM Prisma, Swagger, NestJS, NextJS                                      |
-| what I've improved | work via RTK, React Query, PostgreSQL                                                 |
+| what I've improved | work via RTK, PostgreSQL                                                 |
 
 ## 🇷🇺 RU:
 
@@ -87,7 +87,7 @@ This is the description of the project I talked about in the repository descript
 Во-первых, этот проект вынесен в отдельное репо потому что он дал мне даже в не готовой стадии уже достаточно много опыта, также он достаточно большой, относительно моих прошлых проектов, которые были в [одном репозитории](https://github.com/gudkovWay/projects) всех проектов.
 <br>
 Во-вторых, для запуска следуй следующим шагам:
-### 💾 Запуск: 
+### 💾 Запуск:
 
 <b>Создай новый сервер в PostgreSQL</b>
 - **Сначала скачай PostgreSQL**
@@ -135,13 +135,13 @@ npm run dev
    </tr>
    <tr>
       <td align="center">
-      
-      
-      
+
+
+
      ПОЖАЛУЙСТА, ДЛЯ КОРРЕКТНОЙ РАБОТЫ УБЕДИТЕСЬ, ЧТО ВЫ:
      СНАЧАЛА ЗАПУСТИЛИ СЕРВЕР И ОН РАБОТАЕТ ПО ССЫЛКЕ LOCALHOST:3000
      ЗАТЕМ ЗАПУСТИЛИ КЛИЕНТ И ОН РАБОТАЕТ ПО ССЫЛКЕ LOCALHOST:3001
-     
+
    </tr>
    </table>
 
@@ -159,4 +159,4 @@ npm run dev
 | Авторские фичи(блогера)            | it's selfDev                                                     |
 | Собственные фичи                   |   |
 | Что я изучил(узнал как)            | работать с ORM Prisma, Swagger, NestJS, NextJS |
-| Что я улучшил(закрепил) из навыков | работу с RTK, React Query, PostgreSQL (БД)                                    |
+| Что я улучшил(закрепил) из навыков | работу с RTK, PostgreSQL (БД)                                    |

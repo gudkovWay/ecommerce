@@ -1,7 +1,6 @@
 import * as React from "react";
-
-import regions from "@/shared/api/regions.json";
-import cities from "@/shared/api/city.json";
+import regions from "@/shared/constants/regions.json";
+import cities from "@/shared/constants/city.json";
 import styles from "./Select.module.scss";
 
 interface UserSelectProps {
