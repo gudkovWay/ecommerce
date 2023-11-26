@@ -5,8 +5,8 @@
   height: 248px;
   position: absolute;
   top: 53px;
-  left: 229px;
-  padding-top: 40px;
+  left: 232px;
+  padding: 40px 75px;
   display: none;
   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
   background-color: $surface;
@@ -17,6 +17,7 @@
 
 .category {
   max-width: max-content;
+  max-height: 24px;
   cursor: pointer;
   @include bold-text-s;
   transition: color 0.15s ease-in-out;

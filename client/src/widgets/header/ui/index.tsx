@@ -49,16 +49,20 @@ export const UnAuthHeader = () => {
       </div>
 
       <div className={styles.auth}>
-        <button
-          className={styles.signInBtn}
-          onClick={() => dispatch(openSignIn())}
-        >
-          Вход
-        </button>
         <SecondaryButton
+          decoration="default"
+          buttonText="Вход"
+          buttonType="button"
+          buttonFn={() => dispatch(openSignIn())}
+          size="m"
+        />
+
+        <SecondaryButton
+          decoration="outline"
           buttonText="Регистрация"
           buttonType="button"
           buttonFn={() => dispatch(openSignUp())}
+          size="s"
         />
       </div>
     </header>

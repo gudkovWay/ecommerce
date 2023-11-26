@@ -5,15 +5,31 @@ const SecondaryButton: React.FC<ButtonProps> = ({
   buttonFn,
   buttonType,
   buttonText,
+  decoration,
+  size,
 }) => {
-  return (
-    <button
-      className={styles.secondaryButton}
-      type={buttonType}
-      onClick={() => buttonFn()}
-    >
-      {buttonText}
-    </button>
-  );
+  if (decoration === "default") {
+    return (
+      <button
+        type={buttonType}
+        onClick={() => buttonFn()}
+        className={
+          styles.secondaryButton + " " + styles.secondaryButton__default
+        }
+      >
+        {buttonText}
+      </button>
+    );
+  } else if (decoration === "outline") {
+    return (
+      <button
+        type={buttonType}
+        onClick={() => buttonFn()}
+        className={styles.secondaryButton}
+      >
+        {buttonText}
+      </button>
+    );
+  }
 };
 export default SecondaryButton;

@@ -3,13 +3,17 @@ import ProductCard from "../ProductCard";
 import ProductHeader from "../ProductHeader";
 import products from "../../products.json";
 
-const ProductSales = () => {
+const ProductPurchased = () => {
   return (
     <section className={styles.products__section}>
-      <ProductHeader header="Акции" link="/sales" linkName="Все акции" />
+      <ProductHeader
+        header="Покупали раньше"
+        link="/purchased"
+        linkName="Все покупки"
+      />
       <div className={styles.products__section__list}>
         {products
-          .filter((product) => product.categories.includes("sales"))
+          .filter((product) => product.categories.includes("early"))
           .map((product) => (
             <ProductCard
               key={product.id}
@@ -26,4 +30,4 @@ const ProductSales = () => {
   );
 };
 
-export default ProductSales;
+export default ProductPurchased;
