@@ -13,7 +13,7 @@ const ProductPurchased = () => {
       />
       <div className={styles.products__section__list}>
         {products
-          .filter((product) => product.categories.includes("early"))
+          .filter((product) => product.categories.includes("purchased"))
           .map((product) => (
             <ProductCard
               key={product.id}

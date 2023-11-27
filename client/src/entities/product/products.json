@@ -15,7 +15,7 @@
     "discountPrice": "44,50",
     "rating": 3,
     "image": "/products/milk.png",
-    "categories": ["sales", "new", "early"]
+    "categories": ["sales", "new", "purchased"]
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "discountPrice": "44,50",
     "rating": 4.5,
     "image": "/products/sausages.png",
-    "categories": ["sales", "new", "early"]
+    "categories": ["sales", "new", "purchased"]
   },
   {
     "id": 5,
@@ -41,7 +41,7 @@
     "price": "599,99",
     "rating": 2,
     "image": "/products/combine-kzs1218.png",
-    "categories": ["new", "early"]
+    "categories": ["new", "purchased"]
   },
   {
     "id": 6,
@@ -49,6 +49,6 @@
     "price": "77,99",
     "rating": 2,
     "image": "/products/ham.png",
-    "categories": ["early"]
+    "categories": ["purchased"]
   }
 ]

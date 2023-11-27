@@ -1,8 +1,15 @@
 @import "@/styles/base/variables";
 
 .blog {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    overflow-x: hidden;
 
+  }
   &__card {
+    position: relative;
     width: 376px;
     height: 420px;
     display: flex;
@@ -26,6 +33,10 @@
       p {
         @include text-s;
         color: $on-surface;
+      }
+      button {
+       position: absolute;
+       bottom: 10px;
       }
     }
 

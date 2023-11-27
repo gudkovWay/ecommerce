@@ -1,13 +1,26 @@
 import SectionHeader from "@/shared/ui/header";
 import BlogCard from "./BlogCard";
+import blogs from "@/shared/constants/blogs.json";
+
 import styles from "./Blog.module.scss";
 
 const Blog = () => {
   return (
-    <div className={styles.blog}>
+    <section className={styles.blog}>
       <SectionHeader header="Статьи" link="/blog" linkName="Все статьи" />
-      <BlogCard />
-    </div>
+      <div className={styles.blog__list}>
+        {blogs.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            id={blog.id}
+            title={blog.title}
+            description={blog.description}
+            time={blog.time}
+            imageSrc={blog.image}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
