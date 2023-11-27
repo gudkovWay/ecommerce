@@ -43,6 +43,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {discountPrice ? (
             <span className={styles.product__card__content__price__discount}>
               {discountPrice} ₽
+              <br />
+              <p>С картой</p>
             </span>
           ) : null}
           <span

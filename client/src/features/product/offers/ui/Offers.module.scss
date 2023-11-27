@@ -1,0 +1,47 @@
+@import "@/styles/base/variables";
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__banners {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  &__banner {
+    width: 584px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 40px;
+    background-color: $primary-muted;
+    border-radius: 4px;
+    @include primary-shadow-m;
+
+    &__text {
+      max-width: 258px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      h3 {
+        @include header-text-s;
+        color: $on-surface;
+      }
+      p {
+        @include text-s;
+        color: $on-surface;
+      }
+    }
+
+
+    &__last {
+      background: url("../../../../assets/banner.png") no-repeat $secondary;
+      background-size: cover;
+      @include secondary-shadow-m;
+    }
+  }
+
+}

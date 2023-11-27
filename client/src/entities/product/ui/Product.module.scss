@@ -1,13 +1,6 @@
 @import "@/styles/base/variables";
 
 .products {
-  width: 100%;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-  padding: 80px 116px;
-  background-color: $background-content;
 
   &__section {
     display: flex;
@@ -21,10 +14,6 @@
       flex-direction: row;
 
 
-      h2 {
-        @include header-text-m;
-        color: $on-surface;
-      }
       a {
         width: 168px;
         @include text-s;

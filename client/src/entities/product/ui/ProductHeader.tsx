@@ -14,7 +14,7 @@ const ProductHeader: React.FC<ProductHeaderProps> = ({
 }) => {
   return (
     <div className={styles.products__section__header}>
-      <h2>{header}</h2>
+      <h2 className="sectionTitle">{header}</h2>
       <a href={link}>
         {linkName}
         <Image src="/icons/arrow-right.svg" alt="arrow" width={7} height={13} />

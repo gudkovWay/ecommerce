@@ -19,35 +19,40 @@
 }
 
 .secondaryButton {
-   width: 121px;
-   height: 32px;
-   border-radius: 4px;
-   border: 1px solid $secondary;
-   @include text-xs;
-   color: $secondary;
-   transition: all 0.17s ease-in;
+  border: 1px solid $secondary;
+  border-radius: 4px;
+  transition: all 0.19s ease-in;
 
-   &__default {
+  &__size {
+    &__s {
+      width: 121px;
+      height: 32px;
+      @include text-xs;
+    }
+    &__m {
+      width: 140px;
+      height: 40px;
+      @include text-s;
+    }
+  }
+
+  &__outline {
+    color: $secondary;
+
+    &:hover {
+      transform: translateY(-5px);
+      @include secondary-shadow-s;
+    }
+  }
+  &__default {
     background-color: $secondary;
     color: $on-secondary;
 
     &:hover {
-      color: $on-primary;
       background-color: $primary;
-      border: 1px solid $primary
+      border: 1px solid $primary;
     }
-   }
-
-   &:hover {
-      @include secondary-shadow-s;
-      filter: blur(0.2px);
-      opacity: 0.9
   }
-   &:active {
-    @include secondary-shadow-xs;
-    filter: blur(2px);
-    opacity: 0.9
-   }
 }
 
 .closeButton {

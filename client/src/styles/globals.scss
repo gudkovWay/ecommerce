@@ -1,5 +1,6 @@
 @import './base/reset';
 @import './base/variables';
+@import './base/base';
 
 * {
   font-family: 'Rubik', sans-serif;
@@ -10,6 +11,17 @@ main {
   height: 100vh;
   margin: 0 auto;
 }
+
+article {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 80px 116px;
+  background-color: $background-content;
+}
+
 .overlay {
   position: absolute;
   top: 0;
