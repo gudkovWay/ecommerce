@@ -1,0 +1,22 @@
+ @import "@/styles/base/variables";
+
+ .section {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+
+      a {
+        width: 168px;
+        @include text-s;
+        color: $hardest;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-left: 8px;
+        gap: 8px;
+      }
+    }
+  }

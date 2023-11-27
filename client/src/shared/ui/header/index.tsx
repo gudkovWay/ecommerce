@@ -1,19 +1,19 @@
 import Image from "next/image";
-import styles from "./Product.module.scss";
+import styles from "./index.module.scss";
 
-type ProductHeaderProps = {
+type SectionHeaderProps = {
   header: string;
   link: string;
   linkName: string;
 };
 
-const ProductHeader: React.FC<ProductHeaderProps> = ({
+const SectionHeader: React.FC<SectionHeaderProps> = ({
   header,
   link,
   linkName,
 }) => {
   return (
-    <div className={styles.products__section__header}>
+    <div className={styles.section__header}>
       <h2 className="sectionTitle">{header}</h2>
       <a href={link}>
         {linkName}
@@ -23,4 +23,4 @@ const ProductHeader: React.FC<ProductHeaderProps> = ({
   );
 };
 
-export default ProductHeader;
+export default SectionHeader;

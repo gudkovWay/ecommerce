@@ -45,12 +45,14 @@
     }
   }
   &__default {
-    background-color: $secondary;
-    color: $on-secondary;
+    background-color: $secondary-muted;
+    border: 1px solid $secondary-muted;
+    color: $secondary;
 
     &:hover {
-      background-color: $primary;
-      border: 1px solid $primary;
+      background-color: $secondary;
+      border: 1px solid $secondary;
+      color: $on-secondary;
     }
   }
 }

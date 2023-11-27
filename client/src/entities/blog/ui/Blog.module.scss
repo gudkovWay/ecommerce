@@ -1,0 +1,36 @@
+@import "@/styles/base/variables";
+
+.blog {
+
+  &__card {
+    width: 376px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: $surface;
+    border-radius: 4px;
+    @include default-shadow-s;
+    transition: all .27s ease-in;
+    &__content {
+      padding: 0 10px;
+
+      time {
+        @include text-xs;
+        color: $hard;
+      }
+      h3 {
+        @include header-text-xs;
+        color: $on-surface;
+      }
+      p {
+        @include text-s;
+        color: $on-surface;
+      }
+    }
+
+    &:hover {
+      @include primary-shadow-m;
+    }
+  }
+}

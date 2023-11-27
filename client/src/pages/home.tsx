@@ -7,6 +7,8 @@ import SignIn from "@/features/auth/sign-in";
 import WelcomeSlider from "@/features/slider";
 import Products from "@/entities/product";
 import Offers from "@/features/product/offers";
+import YandexMap from "@/widgets/map";
+import Blog from "@/entities/blog";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
@@ -29,6 +31,8 @@ export default function Home() {
         <article>
           <Products />
           <Offers />
+          <YandexMap />
+          <Blog />
         </article>
       </main>
     </>

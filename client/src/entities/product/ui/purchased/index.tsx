@@ -1,12 +1,12 @@
 import styles from "../Product.module.scss";
 import ProductCard from "../ProductCard";
-import ProductHeader from "../ProductHeader";
+import SectionHeader from "@/shared/ui/header";
 import products from "../../products.json";
 
 const ProductPurchased = () => {
   return (
     <section className={styles.products__section}>
-      <ProductHeader
+      <SectionHeader
         header="Покупали раньше"
         link="/purchased"
         linkName="Все покупки"
