@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Catalog from "@/features/userSearch/catalog";
 import Search from "@/features/userSearch/search";
 import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
-import { openModal as openSignUp } from "@/features/auth/sign-up/SignUpSlice";
 
 import styles from "./Header.module.scss";
-import SecondaryButton from "@/shared/ui/buttons/secondary";
+import PrimaryButton from "@/shared/ui/buttons/primary";
+import UserMenu from "./userMenu";
 
-export const UnAuthHeader = () => {
+export const Header = () => {
   const dispatch = useDispatch();
 
   return (
@@ -47,24 +47,7 @@ export const UnAuthHeader = () => {
           <Search />
         </div>
       </div>
-
-      <div className={styles.auth}>
-        <SecondaryButton
-          decoration="default"
-          buttonText="Вход"
-          buttonType="button"
-          buttonFn={() => dispatch(openSignIn())}
-          size="m"
-        />
-
-        <SecondaryButton
-          decoration="outline"
-          buttonText="Регистрация"
-          buttonType="button"
-          buttonFn={() => dispatch(openSignUp())}
-          size="s"
-        />
-      </div>
+      <UserMenu />
     </header>
   );
 };

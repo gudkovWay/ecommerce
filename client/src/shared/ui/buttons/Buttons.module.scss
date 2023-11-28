@@ -1,20 +1,24 @@
 @import '@/styles/base/variables';
 
 .primaryButton {
-    width: 260px;
-    height: 68px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-    background-color: $primary-muted;
-    color: $primary;
-    @include text-l;
-    border-radius: 4px;
-    transition: all 0.27s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 11px;
+  border: 1px solid $primary;
+  border-radius: 4px;
+  transition: all 0.19s ease-in;
 
-  &:hover {
-      background-color: $primary;
+  &__outline {}
+  &__default {
+    background-color: $primary;
+    color: $on-primary;
+    &:hover {
+      background-color: $primary-muted;
+      border: 1px solid $primary-muted;
       color: $on-primary;
+    }
   }
 }
 
@@ -23,18 +27,6 @@
   border-radius: 4px;
   transition: all 0.19s ease-in;
 
-  &__size {
-    &__s {
-      width: 121px;
-      height: 32px;
-      @include text-xs;
-    }
-    &__m {
-      width: 140px;
-      height: 40px;
-      @include text-s;
-    }
-  }
 
   &__outline {
     color: $secondary;
@@ -76,5 +68,17 @@
   gap: 11.5px;
   @include text-xs;
   color: $hardest;
-
 }
+
+.button__size {
+    &__s {
+      width: 121px;
+      height: 32px;
+      @include text-xs;
+    }
+    &__m {
+      width: 140px;
+      height: 40px;
+      @include text-s;
+    }
+  }

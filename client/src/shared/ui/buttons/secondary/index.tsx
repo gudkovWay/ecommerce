@@ -15,16 +15,15 @@ const SecondaryButton: React.FC<ButtonProps> = ({
       type={buttonType}
       onClick={() => buttonFn()}
       className={clsx(styles.secondaryButton, {
-        [styles.secondaryButton__size__s]: size === "s",
-        [styles.secondaryButton__size__m]: size === "m",
-        [styles.secondaryButton__size__l]: size === "l",
-        [styles.secondaryButton__size__xl]: size === "xl",
+        [styles.button__size__s]: size === "s",
+        [styles.button__size__m]: size === "m",
+        [styles.button__size__l]: size === "l",
+        [styles.button__size__xl]: size === "xl",
         [styles.secondaryButton__outline]: decoration === "outline",
         [styles.secondaryButton__default]: decoration === "default",
       })}
     >
-      {" "}
-      {buttonText}{" "}
+      {buttonText}
     </button>
   );
 };
