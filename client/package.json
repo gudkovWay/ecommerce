@@ -31,6 +31,7 @@
     "eslint-config-next": "14.0.2",
     "orval": "^6.20.0",
     "prettier": "^3.1.0",
-    "typescript": "^5"
+    "@yandex/ymaps3-types": "^0.0.19",
+    "typescript": "5.2.2"
   }
 }

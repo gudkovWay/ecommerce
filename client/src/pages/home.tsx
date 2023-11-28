@@ -9,6 +9,7 @@ import Products from "@/entities/product";
 import Offers from "@/features/product/offers";
 import YandexMap from "@/widgets/map";
 import Blog from "@/entities/blog";
+import Footer from "@/widgets/footer";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
@@ -34,6 +35,7 @@ export default function Home() {
           <YandexMap />
           <Blog />
         </article>
+        <Footer />
       </main>
     </>
   );

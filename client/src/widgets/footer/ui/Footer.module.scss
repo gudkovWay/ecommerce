@@ -1,0 +1,70 @@
+@import "@/styles/base/variables";
+
+.footer {
+  max-width: 1440px;
+  height: 126px;
+  background-color: $footer-bg;
+  background-image: url("../../../assets/footer__bg.png");
+  padding: 24px 116px;
+  &__wrapper {
+    max-width: 1210px;
+    height: 44px;
+
+
+    &__nav {
+    display: flex;
+    flex-flow: row ;
+    align-items: center;
+    justify-content: space-between;
+
+      &__site {
+        display: flex;
+        flex-flow: row ;
+        align-items: center;
+        gap: 40px;
+      }
+      &__contacts {
+        display: flex;
+        flex-flow: row ;
+        align-items: center;
+        gap: 40px;
+
+        li:last-child  a {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    max-width: 1210px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include text-xs;
+        color: $on-surface;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.footer__link {
+  @include text-xs;
+  color: $on-surface;
+  text-decoration: none;
+}
