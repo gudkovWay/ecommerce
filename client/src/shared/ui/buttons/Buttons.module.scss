@@ -20,6 +20,17 @@
       color: $on-primary;
     }
   }
+  &__muted {
+    background-color: $primary-muted;
+    border: 1px solid $primary-muted;
+    color: $primary;
+
+    &:hover {
+      background-color: $primary;
+      border: 1px solid $primary;
+      color: $on-primary;
+    }
+  }
 }
 
 .secondaryButton {
@@ -80,5 +91,11 @@
       width: 140px;
       height: 40px;
       @include text-s;
+    }
+
+    &__l {
+      width: 260px;
+      height: 68px;
+      @include text-l;
     }
   }

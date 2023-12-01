@@ -9,6 +9,7 @@ const PrimaryButton: React.FC<ButtonProps> = ({
   buttonText,
   decoration,
   size,
+  color,
   icon,
 }) => {
   return (
@@ -22,6 +23,7 @@ const PrimaryButton: React.FC<ButtonProps> = ({
         [styles.button__size__xl]: size === "xl",
         [styles.primaryButton__outline]: decoration === "outline",
         [styles.primaryButton__default]: decoration === "default",
+        [styles.primaryButton__muted]: color === "muted",
       })}
     >
       {buttonText}

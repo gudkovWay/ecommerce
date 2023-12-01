@@ -71,6 +71,7 @@ CREATE TABLE "Product" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
     "sale" BOOLEAN NOT NULL DEFAULT false,
+    "image" TEXT NOT NULL DEFAULT '',
     "availibility" "Availibility" NOT NULL,
     "typeName" TEXT NOT NULL,
     "brandName" TEXT NOT NULL,

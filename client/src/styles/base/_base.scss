@@ -2,3 +2,8 @@
     @include header-text-m;
     color: $on-surface;
  }
+
+ .authPrimaryButton button {
+   justify-content: center;
+   margin-top: 30px;
+ }

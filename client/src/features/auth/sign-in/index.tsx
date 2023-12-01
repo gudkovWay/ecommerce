@@ -36,6 +36,8 @@ export default function SignIn() {
               buttonFn={() => openSignUp()}
               buttonText="Регистрация"
               buttonType="button"
+              size="s"
+              decoration="outline"
             />
           ) : (
             <BackButton

@@ -54,11 +54,16 @@ export default function SignInForm() {
             {errors.phoneNumber?.message && (
               <span>Введите номер телефона!</span>
             )}
-            <PrimaryButton
-              buttonFn={(event) => changeCurrentStep(2, event)}
-              buttonText="Вход"
-              buttonType="button"
-            />
+            <div className="authPrimaryButton">
+              <PrimaryButton
+                buttonFn={(event) => changeCurrentStep(2, event)}
+                buttonText="Вход"
+                buttonType="button"
+                size="l"
+                color="muted"
+                decoration="default"
+              />
+            </div>
           </section>
         ) : (
           <section className={styles.signInForm}>
@@ -69,11 +74,16 @@ export default function SignInForm() {
               {...register("password", { required: true })}
             />
             {errors.password?.message && <span>Введите пароль!</span>}
-            <PrimaryButton
-              buttonFn={() => console.log("press submit")}
-              buttonText="Подтвердить"
-              buttonType="submit"
-            />
+            <div className="authPrimaryButton">
+              <PrimaryButton
+                buttonFn={() => console.log("press submit")}
+                buttonText="Подтвердить"
+                buttonType="submit"
+                size="l"
+                color="muted"
+                decoration="default"
+              />
+            </div>
           </section>
         )}
       </form>
