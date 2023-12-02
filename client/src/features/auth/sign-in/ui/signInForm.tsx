@@ -8,6 +8,7 @@ import styles from "../Signin.module.scss";
 import PrimaryButton from "@/shared/ui/buttons/primary";
 import { setAuth } from "../../authSlice";
 import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 
 type Inputs = {
   phone: string;
@@ -23,6 +24,9 @@ export default function SignInForm() {
 
   const dispatch = useDispatch();
   const currentStep = useSelector((state: any) => state.signIn.currentStep);
+
+  const [phone, setPhone] = useState("+7");
+  const [password, setPassword] = useState("");
 
   const changeCurrentStep = (step: number) => {
     event?.preventDefault();
@@ -51,9 +55,8 @@ export default function SignInForm() {
               placeholder="Введите ваш номер телефона"
               {...register("phone", { required: true })}
               defaultValue="+7"
-              onChange={(e) => {
-                e.target.value = normalizePhoneNumber(e.target.value);
-              }}
+              value={phone}
+              onChange={(e) => setPhone(normalizePhoneNumber(e.target.value))}
             />
 
             {errors.phone?.message && <span>Введите номер телефона!</span>}
@@ -75,6 +78,8 @@ export default function SignInForm() {
               type="password"
               placeholder="Введите ваш пароль"
               {...register("password", { required: true })}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password?.message && <span>Введите пароль!</span>}
             <div className="authPrimaryButton">

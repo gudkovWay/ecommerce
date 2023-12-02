@@ -19,7 +19,7 @@ export default function Home() {
 
   const { data } = useQuery({
     queryKey: ["session"],
-    queryFn: () => authControllerGetSessionInfo(), // 3:13:27
+    queryFn: () => authControllerGetSessionInfo(),
   });
 
   return (

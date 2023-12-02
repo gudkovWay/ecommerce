@@ -86,6 +86,7 @@ export interface AccountDto {
 
 export interface GetSessionInfoDto {
   exp: number;
+  firstName: string;
   iat: number;
   id: number;
   phone: string;

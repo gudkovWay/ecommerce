@@ -15,11 +15,13 @@ import { Response } from 'express';
 import { CookieService } from './cookie.service';
 import { AuthGuard } from './auth.guard';
 import { SessionInfo } from './session-info.decorator';
+import { DbService } from 'src/db/db.service';
 
 @ApiTags('Auth Controller')
 @Controller('auth')
 export class AuthController {
   constructor(
+    private db: DbService,
     private authService: AuthService,
     private cookieService: CookieService,
   ) {}
@@ -72,7 +74,11 @@ export class AuthController {
     type: GetSessionInfoDto,
   })
   @UseGuards(AuthGuard)
-  getSessionInfo(@SessionInfo() session: GetSessionInfoDto) {
-    return session;
+  async getSessionInfo(@SessionInfo() session: GetSessionInfoDto) {
+    const firstName = await this.db.user.findUnique({
+      where: { id: session.id },
+      select: { firstName: true },
+    });
+    return firstName;
   }
 }

@@ -8,6 +8,7 @@ import CloseButton from "@/shared/ui/buttons/utils/CloseButton";
 import BackButton from "@/shared/ui/buttons/utils/BackButton";
 import SecondaryButton from "@/shared/ui/buttons/secondary";
 import styles from "./Signin.module.scss";
+import { useEffect } from "react";
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -25,6 +26,18 @@ export default function SignIn() {
     dispatch(openSignUpModal());
   };
 
+  useEffect(() => {
+    const closeModalOnEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        dispatch(closeModal());
+      }
+    };
+    document.addEventListener("keydown", closeModalOnEscape);
+    return () => {
+      document.removeEventListener("keydown", closeModalOnEscape);
+    };
+  }, [dispatch]);
+
   if (isOpen) {
     return (
       <div className={styles.signIn}>
@@ -38,12 +51,16 @@ export default function SignIn() {
               buttonType="button"
               size="s"
               decoration="outline"
+              color="default"
             />
           ) : (
             <BackButton
               buttonFn={() => changeCurrentStep(1)}
               buttonType="button"
               buttonText="Вернуться"
+              decoration="default"
+              size="s"
+              color="default"
             />
           )}
           <button className={styles.forgetPasswordButton}>
@@ -54,6 +71,9 @@ export default function SignIn() {
           buttonFn={() => dispatch(closeModal())}
           buttonType="button"
           buttonText="Закрыть"
+          decoration="default"
+          size="s"
+          color="default"
         />
       </div>
     );

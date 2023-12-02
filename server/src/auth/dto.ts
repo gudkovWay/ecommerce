@@ -74,3 +74,4 @@ export class GetSessionInfoDto {
   @ApiProperty()
   'exp': number;
 }
+

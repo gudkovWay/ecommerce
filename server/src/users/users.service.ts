@@ -12,6 +12,9 @@ export class UsersService {
   findByPhone(phone: string) {
     return this.db.user.findFirst({ where: { phone } });
   }
+  findById(id: number) {
+    return this.db.user.findFirst({ where: { id } });
+  }
 
   async create(
     phone: string,

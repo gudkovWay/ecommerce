@@ -5,9 +5,11 @@ import { PasswordService } from './password.service';
 import { CookieService } from './cookie.service';
 import { UsersModule } from 'src/users/users.module';
 import { JwtModule } from '@nestjs/jwt';
+import { DbModule } from 'src/db/db.module';
 
 @Module({
   imports: [
+    DbModule,
     UsersModule,
     JwtModule.register({
       global: true,

@@ -4,10 +4,17 @@ import Image from "next/image";
 
 import styles from "./Header.module.scss";
 import PrimaryButton from "@/shared/ui/buttons/primary";
+import { authControllerGetSessionInfo } from "@/shared/api/generated";
+import { useQuery } from "@tanstack/react-query";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state: any) => state.auth.isAuth);
+
+  const { data } = useQuery({
+    queryKey: ["session"],
+    queryFn: () => authControllerGetSessionInfo(),
+  });
 
   return (
     <div className={styles.user}>
@@ -55,6 +62,7 @@ const UserMenu = () => {
             buttonType="button"
             buttonFn={() => dispatch(openSignIn())}
             size="m"
+            color="default"
             icon={
               <Image
                 src="/header/log-in.svg"
@@ -75,7 +83,7 @@ const UserMenu = () => {
               width={24}
               height={16}
             />
-            <a>Elliot</a>
+            <a>{data?.firstName}</a>
           </div>
           <div className={styles.userMenu}>
             <li>

@@ -391,6 +391,8 @@ components:
           type: number
         phone:
           type: string
+        firstName:
+          type: string
         iat:
           type: number
         exp:
@@ -398,6 +400,7 @@ components:
       required:
         - id
         - phone
+        - firstName
         - iat
         - exp
     AccountDto:
