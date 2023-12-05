@@ -58,9 +58,6 @@ export default function SignIn() {
               buttonFn={() => changeCurrentStep(1)}
               buttonType="button"
               buttonText="Вернуться"
-              decoration="default"
-              size="s"
-              color="default"
             />
           )}
           <button className={styles.forgetPasswordButton}>
@@ -71,9 +68,6 @@ export default function SignIn() {
           buttonFn={() => dispatch(closeModal())}
           buttonType="button"
           buttonText="Закрыть"
-          decoration="default"
-          size="s"
-          color="default"
         />
       </div>
     );

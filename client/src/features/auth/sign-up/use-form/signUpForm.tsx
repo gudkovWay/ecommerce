@@ -8,7 +8,7 @@ import ChooseGender from "./gender";
 import UserSelect from "./select";
 
 const SignUpForm = () => {
-  const { register, controller, reset } = useForm();
+  const { register, reset } = useForm();
 
   const [isDisabled, setIsDisabled] = useState(false);
 
