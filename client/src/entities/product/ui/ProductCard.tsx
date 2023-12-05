@@ -8,6 +8,7 @@ import {
   decrement,
   increment,
 } from "@/features/drawer/purchase/purchaseDrawerSlice";
+import { setIsFavorite } from "@/features/drawer/favorite/favoriteDrawerSlice";
 import styles from "./Product.module.scss";
 import { RootState } from "@/shared/lib/redux/store";
 
@@ -30,9 +31,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const dispatch = useDispatch();
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
-  const isFavorite = false;
+  const { favoriteItems } = useSelector(
+    (state: RootState) => state.favoriteDrawer,
+  );
 
   const isAdded = items && items.find((item) => item.id === id);
+
+  const isFavorite =
+    favoriteItems &&
+    favoriteItems.find((item) => item.id === id) &&
+    favoriteItems.find((item) => item.id === id).isFavorite;
 
   return (
     <div
@@ -64,10 +72,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
         <button
           className={clsx(styles.product__card__image__favorite, {
-            [styles.product__card__image__favorite__active]:
-              isFavorite === true,
+            [styles.product__card__image__favorite__active]: isFavorite,
           })}
-          onClick={() => console.log("favorite")}
+          onClick={() => dispatch(setIsFavorite({ id }))}
           type="button"
         >
           <Image

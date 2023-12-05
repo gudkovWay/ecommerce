@@ -127,6 +127,10 @@
               background-color: $secondary;
               border-radius: 4px;
               padding: 0 8px;
+              p {
+                @include text-s;
+                color: $on-secondary;
+              }
             }
           }
 
