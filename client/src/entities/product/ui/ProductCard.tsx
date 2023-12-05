@@ -1,11 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
-import styles from "./Product.module.scss";
 import renderRating from "@/features/product/rating";
-import { decrement, increment } from "@/features/drawer/drawerSlice";
+import { addItem, decrement, increment } from "@/features/drawer/drawerSlice";
+import styles from "./Product.module.scss";
 import { RootState } from "@/shared/lib/redux/store";
 
 type ProductCardProps = {
@@ -26,17 +25,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   id,
 }) => {
   const dispatch = useDispatch();
-  const counter = useSelector((state: RootState) => state.drawer.counter);
-
-  const [isFavorite, setIsFavorite] = useState<Boolean>(false);
-  const [isAddedToCart, setIsAddedToCart] = useState<Boolean>(false);
-
-  const handleFavorite = () => {
-    setIsFavorite(!isFavorite);
-  };
-  const handleAddToCard = () => {
-    setIsAddedToCart(true);
-  };
+  const { counter, isAdded } = useSelector((state: RootState) => state.drawer);
+  const isFavorite = false;
 
   return (
     <div className={styles.product__card}>
@@ -53,7 +43,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             [styles.product__card__image__favorite__active]:
               isFavorite === true,
           })}
-          onClick={handleFavorite}
+          onClick={() => console.log("favorite")}
+          type="button"
         >
           <Image
             src="/icons/favorite.svg"
@@ -89,9 +80,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating })}
         </div>
-        {isAddedToCart === false ? (
+
+        {isAdded === false ? (
           <button
-            onClick={() => handleAddToCard()}
+            onClick={() => dispatch(addItem({ id }))}
             className={styles.product__card__content__button}
           >
             В корзину

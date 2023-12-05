@@ -1,17 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
 
 import Catalog from "@/features/userSearch/catalog";
 import Search from "@/features/userSearch/search";
-import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
 
 import styles from "./Header.module.scss";
-import PrimaryButton from "@/shared/ui/buttons/primary";
 import UserMenu from "./userMenu";
 
 export const Header = () => {
-  const dispatch = useDispatch();
 
   return (
     <header className={styles.header}>

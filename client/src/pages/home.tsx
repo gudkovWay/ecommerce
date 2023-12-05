@@ -16,12 +16,14 @@ import { useQuery } from "@tanstack/react-query";
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
   const isSignInOpen = useSelector((state: any) => state.signIn.isOpen);
-
+  {
+    /*
   const { data } = useQuery({
     queryKey: ["session"],
     queryFn: () => authControllerGetSessionInfo(),
   });
-
+*/
+  }
   return (
     <>
       <Head>

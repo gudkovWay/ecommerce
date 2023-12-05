@@ -1,15 +1,16 @@
-import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
+import { useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
-import styles from "./Header.module.scss";
+import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
 import PrimaryButton from "@/shared/ui/buttons/primary";
 import { authControllerGetSessionInfo } from "@/shared/api/generated";
-import { useQuery } from "@tanstack/react-query";
+import { RootState } from "@/shared/lib/redux/store";
+import styles from "./Header.module.scss";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  const isAuth = useSelector((state: any) => state.auth.isAuth);
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
 
   const { data } = useQuery({
     queryKey: ["session"],
