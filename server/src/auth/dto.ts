@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class SignUpBodyDto {
   @ApiProperty({
@@ -44,6 +44,13 @@ export class SignUpBodyDto {
   region: string;
 
   @ApiProperty({
+    example: 'admin@mail.ru',
+  })
+  @IsNotEmpty()
+  @IsEmail()
+  email?: string;
+
+  @ApiProperty({
     example: 'USER',
   })
   role: string;
@@ -74,4 +81,3 @@ export class GetSessionInfoDto {
   @ApiProperty()
   'exp': number;
 }
-

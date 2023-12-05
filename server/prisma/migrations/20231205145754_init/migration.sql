@@ -13,6 +13,7 @@ CREATE TABLE "User" (
     "birthDate" TEXT NOT NULL,
     "city" TEXT NOT NULL,
     "region" TEXT NOT NULL,
+    "email" TEXT,
     "role" TEXT NOT NULL DEFAULT 'USER',
     "hash" TEXT NOT NULL,
     "salt" TEXT NOT NULL,
@@ -121,6 +122,9 @@ CREATE TABLE "_ProductToTag" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_phone_key" ON "User"("phone");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_ownerId_key" ON "Account"("ownerId");

@@ -24,11 +24,12 @@ export class AuthService {
     region: string,
     role: string,
     birthDate: string,
+    email?: string,
   ) {
     const user = await this.usersService.findByPhone(phone);
 
     if (user) {
-      throw new BadRequestException({ type: 'email-exists' });
+      throw new BadRequestException({ type: 'phone-exists' });
     }
 
     const salt = this.passwordService.getSalt();
@@ -44,6 +45,7 @@ export class AuthService {
       region,
       role,
       birthDate,
+      email,
     );
 
     const accessToken = await this.jwtService.signAsync({

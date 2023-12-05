@@ -41,6 +41,7 @@ export class AuthController {
       body.region,
       body.role,
       body.birthDate,
+      body.email,
     );
 
     this.cookieService.setToken(res, accessToken);
