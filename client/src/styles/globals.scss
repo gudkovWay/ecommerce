@@ -21,7 +21,9 @@ article {
   padding: 80px 116px;
   background-color: $background-content;
 }
-
+.no-scroll {
+  overflow: hidden;
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -30,5 +32,5 @@ article {
   height: 100%;
   background-color: $primary-muted;
   opacity: 0.8;
-  z-index: 1000;
+  z-index: 10;
 }

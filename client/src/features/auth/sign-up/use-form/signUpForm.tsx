@@ -6,9 +6,27 @@ import PrimaryButton from "@/shared/ui/buttons/primary";
 import SecondaryButton from "@/shared/ui/buttons/secondary";
 import ChooseGender from "./gender";
 import UserSelect from "./select";
+import { useMutation } from "@tanstack/react-query";
+import { authControllerSignUp } from "@/shared/api/generated";
+
+type Inputs = {
+  phone: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  city: string;
+  region: string;
+  birthDate: string;
+  email?: string;
+  role: string;
+};
 
 const SignUpForm = () => {
-  const { register, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -16,42 +34,58 @@ const SignUpForm = () => {
     setIsDisabled(!isDisabled);
   };
 
+  const signUpMutation = useMutation({
+    mutationFn: authControllerSignUp,
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
+
   return (
-    <form className={styles.signUpForm} onSubmit={() => console.log("submit")}>
+    <form
+      className={styles.signUpForm}
+      onSubmit={handleSubmit((data) => signUpMutation.mutate(data))}
+    >
       <div className={styles.requiredFields}>
         <label>
           Телефон
-          <input type="phone" />
+          <input type="phone" {...register("phone", { required: true })} />
         </label>
 
         <label>
           Дата Рождения
-          <input type="date" />
+          <input type="date" {...register("birthDate", { required: true })} />
         </label>
 
         <label>
           Фамилия
-          <input type="text" />
+          <input type="text" {...register("lastName", { required: true })} />
         </label>
 
         <label>
           Регион
-          <UserSelect value="regions" />
+          <UserSelect
+            value="regions"
+            {...register("region", { required: true })}
+          />
         </label>
 
         <label>
           Имя
-          <input type="text" />
+          <input type="text" {...register("firstName", { required: true })} />
         </label>
 
         <label>
           Населенный пункт
-          <UserSelect value="city" />
+          <UserSelect value="city" {...register("city", { required: true })} />
         </label>
 
         <label>
           Пароль
-          <input type="password" />
+          <input
+            type="password"
+            {...register("password", { required: true })}
+          />
         </label>
 
         <label>
@@ -77,7 +111,7 @@ const SignUpForm = () => {
         </label>
         <label>
           E-mail
-          <input type="email" />
+          <input type="email" {...register("email")} />
         </label>
         <label className={styles.loyalCart}>
           У меня нет карты лояльности
@@ -90,16 +124,23 @@ const SignUpForm = () => {
         </label>
       </div>
       <div className={styles.formButtons}>
-        <PrimaryButton
-          buttonFn={() => console.log("pressed primary button")}
-          buttonType="submit"
-          buttonText="Продолжить"
-        />
-
+        <div className="authPrimaryButton">
+          <PrimaryButton
+            buttonFn={() => console.log("pressed primary button")}
+            buttonType="submit"
+            buttonText="Продолжить"
+            size="l"
+            color="muted"
+            decoration="default"
+          />
+        </div>
         <SecondaryButton
           buttonFn={() => console.log("pressed secondary button")}
           buttonType="button"
           buttonText="Войти"
+          size="s"
+          color="default"
+          decoration="outline"
         />
       </div>
     </form>
