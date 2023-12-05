@@ -12,8 +12,8 @@ const initialState: drawerInitialState = {
   isAdded: false,
 };
 
-export const drawerSlice = createSlice({
-  name: "drawer",
+export const purchaseDrawerSlice = createSlice({
+  name: "purchaseDrawer",
   initialState: initialState,
   reducers: {
     addItem: (state, action) => {
@@ -43,6 +43,6 @@ export const drawerSlice = createSlice({
   },
 });
 
-export const { addItem, increment, decrement } = drawerSlice.actions;
+export const { addItem, increment, decrement } = purchaseDrawerSlice.actions;
 
-export default drawerSlice.reducer;
+export default purchaseDrawerSlice.reducer;

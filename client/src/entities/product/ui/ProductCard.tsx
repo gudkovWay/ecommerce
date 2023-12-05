@@ -1,9 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import clsx from "clsx";
 
 import renderRating from "@/features/product/rating";
-import { addItem, decrement, increment } from "@/features/drawer/drawerSlice";
+import {
+  addItem,
+  decrement,
+  increment,
+} from "@/features/drawer/purchase/purchaseDrawerSlice";
 import styles from "./Product.module.scss";
 import { RootState } from "@/shared/lib/redux/store";
 
@@ -25,12 +29,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
   id,
 }) => {
   const dispatch = useDispatch();
-  const { counter, isAdded } = useSelector((state: RootState) => state.drawer);
+  const { items } = useSelector((state: RootState) => state.purchaseDrawer);
   const isFavorite = false;
 
+  const isAdded = items && items.find((item) => item.id === id);
+
   return (
-    <div className={styles.product__card}>
+    <div
+      className={clsx(styles.product__card, {
+        [styles.product__card__overlay]: isAdded,
+      })}
+    >
       <div className={styles.product__card__image}>
+        {isAdded ? (
+          <div className={styles.product__card__image__overlay}>
+            <div className={styles.product__card__image__overlay__icon}>
+              <Image
+                className={styles.product__card__image__overlay__check}
+                src="/icons/check.svg"
+                alt="check"
+                width={24}
+                height={24}
+              />
+            </div>
+          </div>
+        ) : null}
+
         <Image
           src={imageSrc}
           alt="product"
@@ -81,14 +105,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {renderRating({ rating })}
         </div>
 
-        {isAdded === false ? (
-          <button
-            onClick={() => dispatch(addItem({ id }))}
-            className={styles.product__card__content__button}
-          >
-            В корзину
-          </button>
-        ) : (
+        {isAdded ? (
           <div className={styles.product__card__content__button__added}>
             <button
               onClick={() => dispatch(decrement({ id }))}
@@ -101,7 +118,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 height={24}
               />
             </button>
-            <p>{counter}</p>
+            <p>{items.find((item) => item.id === id)?.counter}</p>
             <button
               onClick={() => dispatch(increment({ id }))}
               className={styles.product__card__content__button__added__button}
@@ -109,6 +126,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
               <Image src="/icons/plus.svg" alt="plus" width={24} height={24} />
             </button>
           </div>
+        ) : (
+          <button
+            onClick={() => dispatch(addItem({ id }))}
+            className={styles.product__card__content__button}
+          >
+            В корзину
+          </button>
         )}
       </div>
     </div>
