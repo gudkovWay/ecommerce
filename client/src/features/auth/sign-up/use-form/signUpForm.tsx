@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { useDispatch } from "react-redux";
 
-import styles from "./SignUpForm.module.scss";
-import PrimaryButton from "@/shared/ui/buttons/primary";
-import SecondaryButton from "@/shared/ui/buttons/secondary";
+import { setAuth } from "../../authSlice";
+import { authControllerSignUp } from "@/shared/api/generated";
+import { closeModal } from "../SignUpSlice";
+import UIButton from "@/shared/ui/buttons/default";
 import ChooseGender from "./gender";
 import UserSelect from "./select";
-import { useMutation } from "@tanstack/react-query";
-import { authControllerSignUp } from "@/shared/api/generated";
+import styles from "./SignUpForm.module.scss";
 
 type Inputs = {
   phone: string;
@@ -17,7 +19,8 @@ type Inputs = {
   city: string;
   region: string;
   birthDate: string;
-  email?: string;
+  gender: string;
+  email: string;
   role: string;
 };
 
@@ -27,6 +30,7 @@ const SignUpForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
+  const dispatch = useDispatch();
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -37,7 +41,8 @@ const SignUpForm = () => {
   const signUpMutation = useMutation({
     mutationFn: authControllerSignUp,
     onSuccess: (data) => {
-      console.log(data);
+      dispatch(setAuth(data));
+      dispatch(closeModal());
     },
   });
 
@@ -111,7 +116,7 @@ const SignUpForm = () => {
         </label>
         <label>
           E-mail
-          <input type="email" {...register("email")} />
+          <input type="email" {...register("email", { required: true })} />
         </label>
         <label className={styles.loyalCart}>
           У меня нет карты лояльности
@@ -125,21 +130,22 @@ const SignUpForm = () => {
       </div>
       <div className={styles.formButtons}>
         <div className="authPrimaryButton">
-          <PrimaryButton
-            buttonFn={() => console.log("pressed primary button")}
+          <UIButton
+            buttonFn={() => console.log("primary ")}
             buttonType="submit"
             buttonText="Продолжить"
             size="l"
-            color="muted"
+            color="primary"
+            muted={true}
             decoration="default"
           />
         </div>
-        <SecondaryButton
+        <UIButton
           buttonFn={() => console.log("pressed secondary button")}
           buttonType="button"
           buttonText="Войти"
           size="s"
-          color="default"
+          color="secondary"
           decoration="outline"
         />
       </div>

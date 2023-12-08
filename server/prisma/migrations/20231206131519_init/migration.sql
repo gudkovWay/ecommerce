@@ -13,6 +13,7 @@ CREATE TABLE "User" (
     "birthDate" TEXT NOT NULL,
     "city" TEXT NOT NULL,
     "region" TEXT NOT NULL,
+    "gender" TEXT NOT NULL,
     "email" TEXT,
     "role" TEXT NOT NULL DEFAULT 'USER',
     "hash" TEXT NOT NULL,

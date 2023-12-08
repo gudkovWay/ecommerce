@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export class SignUpBodyDto {
   @ApiProperty({
@@ -42,6 +42,11 @@ export class SignUpBodyDto {
   })
   @IsNotEmpty()
   region: string;
+
+  @ApiProperty({ example: 'female' })
+  @IsString()
+  @IsNotEmpty()
+  gender: 'male' | 'female';
 
   @ApiProperty({
     example: 'admin@mail.ru',

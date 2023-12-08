@@ -6,7 +6,7 @@ import { RootState } from "@/shared/lib/redux/store";
 import SignInForm from "./ui/signInForm";
 import CloseButton from "@/shared/ui/buttons/utils/CloseButton";
 import BackButton from "@/shared/ui/buttons/utils/BackButton";
-import SecondaryButton from "@/shared/ui/buttons/secondary";
+import UIButton from "@/shared/ui/buttons/default";
 import styles from "./Signin.module.scss";
 import { useEffect } from "react";
 
@@ -45,13 +45,13 @@ export default function SignIn() {
         <SignInForm />
         <div className={styles.secondaryButtons}>
           {currentStep === 1 ? (
-            <SecondaryButton
+            <UIButton
               buttonFn={() => openSignUp()}
               buttonText="Регистрация"
               buttonType="button"
               size="s"
               decoration="outline"
-              color="default"
+              color="secondary"
             />
           ) : (
             <BackButton

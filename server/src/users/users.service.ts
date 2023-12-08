@@ -26,6 +26,7 @@ export class UsersService {
     region: string,
     role: string,
     birthDate: string,
+    gender: string,
     email?: string,
   ) {
     const user = await this.db.user.create({
@@ -39,6 +40,7 @@ export class UsersService {
         region,
         role,
         birthDate,
+        gender,
         email,
       },
     });

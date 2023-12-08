@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import SecondaryButton from "@/shared/ui/buttons/secondary";
+import UIButton from "@/shared/ui/buttons/default";
 import styles from "./Blog.module.scss";
 
 type BlogCardProps = {
@@ -26,10 +26,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
         <h3>{title}</h3>
         <p>{description}</p>
         <div className={styles.blog__card__content__button}>
-          <SecondaryButton
+          <UIButton
             buttonFn={() => console.log(`button pressed ${id}`)}
             buttonType="button"
             buttonText="Подробнее"
+            color="secondary"
             decoration="default"
             size="m"
           />

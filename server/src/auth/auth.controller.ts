@@ -41,6 +41,7 @@ export class AuthController {
       body.region,
       body.role,
       body.birthDate,
+      body.gender,
       body.email,
     );
 

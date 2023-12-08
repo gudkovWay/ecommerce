@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
 import { openModal as openSignIn } from "@/features/auth/sign-in/SignInSlice";
-import PrimaryButton from "@/shared/ui/buttons/primary";
+import UIButton from "@/shared/ui/buttons/default";
 import { authControllerGetSessionInfo } from "@/shared/api/generated";
 import { RootState } from "@/shared/lib/redux/store";
 import styles from "./Header.module.scss";
@@ -57,13 +57,12 @@ const UserMenu = () => {
 
       {isAuth === false ? (
         <div className={styles.auth}>
-          <PrimaryButton
-            decoration="default"
+          <UIButton
             buttonText="Войти"
             buttonType="button"
             buttonFn={() => dispatch(openSignIn())}
             size="m"
-            color="default"
+            color="primary"
             icon={
               <Image
                 src="/header/log-in.svg"

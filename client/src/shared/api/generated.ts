@@ -101,6 +101,7 @@ export interface SignUpBodyDto {
   city: string;
   email: string;
   firstName: string;
+  gender: string;
   lastName: string;
   password: string;
   phone: string;

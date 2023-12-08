@@ -4,6 +4,7 @@ export type ButtonProps = {
   buttonType: "button" | "submit" | "reset" | undefined;
   decoration?: "default" | "outline";
   size?: "s" | "m" | "l" | "xl";
-  color?: "default" | "muted";
+  color?: "primary" | "secondary";
+  muted?: boolean;
   icon?: JSX.Element;
 };

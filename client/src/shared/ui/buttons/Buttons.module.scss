@@ -1,36 +1,64 @@
 @import '@/styles/base/variables';
 
-.primaryButton {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.button {
   gap: 20px;
   padding-right: 11px;
-  border: 1px solid $primary;
   border-radius: 4px;
   transition: all 0.19s ease-in;
 
-  &__outline {}
-  &__default {
+  &__primary {
+    border: 1px solid $primary;
     background-color: $primary;
     color: $on-primary;
+
     &:hover {
       background-color: $primary-muted;
       border: 1px solid $primary-muted;
       color: $on-primary;
     }
-  }
-  &__muted {
-    background-color: $primary-muted;
-    border: 1px solid $primary-muted;
-    color: $primary;
 
-    &:hover {
-      background-color: $primary;
-      border: 1px solid $primary;
-      color: $on-primary;
+
+    &__muted {
+      background-color: $primary-muted;
+      border: 1px solid $primary-muted;
+      color: $primary;
+
+      &:hover {
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $on-primary;
+      }
+    }
+
+  }
+
+  &__secondary {
+    border: 1px solid $secondary;
+    border-radius: 4px;
+    transition: all 0.19s ease-in;
+    justify-content: center;
+
+    &__outline {
+      color: $secondary;
+
+      &:hover {
+        transform: translateY(-5px);
+        @include secondary-shadow-s;
+      }
+    }
+    &__default {
+      background-color: $secondary-muted;
+      border: 1px solid $secondary-muted;
+      color: $secondary;
+
+      &:hover {
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: $on-secondary;
+      }
     }
   }
+
 }
 
 .secondaryButton {

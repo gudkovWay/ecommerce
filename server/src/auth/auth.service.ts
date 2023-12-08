@@ -24,6 +24,7 @@ export class AuthService {
     region: string,
     role: string,
     birthDate: string,
+    gender: string,
     email?: string,
   ) {
     const user = await this.usersService.findByPhone(phone);
@@ -45,6 +46,7 @@ export class AuthService {
       region,
       role,
       birthDate,
+      gender,
       email,
     );
 

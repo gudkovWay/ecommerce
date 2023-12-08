@@ -15,6 +15,7 @@ model User {
   birthDate String
   city String
   region String
+  gender String
   email String? @unique
   role String @default("USER")
 

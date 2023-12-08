@@ -360,6 +360,9 @@ components:
         region:
           type: string
           example: Рассия
+        gender:
+          type: string
+          example: female
         email:
           type: string
           example: admin@mail.ru
@@ -374,6 +377,7 @@ components:
         - birthDate
         - city
         - region
+        - gender
         - email
         - role
     SignInBodyDto:

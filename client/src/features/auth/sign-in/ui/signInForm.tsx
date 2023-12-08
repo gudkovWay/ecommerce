@@ -1,21 +1,21 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal, setCurrentStep } from "../SignInSlice";
-
-import { authControllerSignIn } from "@/shared/api/generated";
-import { normalizePhoneNumber } from "@/shared/lib/normalizePhoneNumber";
-import styles from "../Signin.module.scss";
-import PrimaryButton from "@/shared/ui/buttons/primary";
-import { setAuth } from "../../authSlice";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
+
+import { closeModal, setCurrentStep } from "../SignInSlice";
+import { setAuth } from "../../authSlice";
+import { authControllerSignIn } from "@/shared/api/generated";
+import { normalizePhoneNumber } from "@/shared/lib/normalizePhoneNumber";
+import UIButton from "@/shared/ui/buttons/default/";
+import styles from "../Signin.module.scss";
 
 type Inputs = {
   phone: string;
   password: string;
 };
 
-export default function SignInForm() {
+const SignInForm = () => {
   const {
     register,
     handleSubmit,
@@ -61,12 +61,13 @@ export default function SignInForm() {
 
             {errors.phone?.message && <span>Введите номер телефона!</span>}
             <div className="authPrimaryButton">
-              <PrimaryButton
+              <UIButton
                 buttonFn={() => changeCurrentStep(2)}
                 buttonText="Вход"
                 buttonType="button"
                 size="l"
-                color="muted"
+                color="primary"
+                muted
                 decoration="default"
               />
             </div>
@@ -83,12 +84,13 @@ export default function SignInForm() {
             />
             {errors.password?.message && <span>Введите пароль!</span>}
             <div className="authPrimaryButton">
-              <PrimaryButton
+              <UIButton
                 buttonFn={() => console.log("press submit")}
                 buttonText="Подтвердить"
                 buttonType="submit"
                 size="l"
-                color="muted"
+                color="primary"
+                muted={true}
                 decoration="default"
               />
             </div>
@@ -97,4 +99,6 @@ export default function SignInForm() {
       </form>
     </>
   );
-}
+};
+
+export default SignInForm;

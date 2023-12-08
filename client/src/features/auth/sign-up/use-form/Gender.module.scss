@@ -1,46 +1,32 @@
 @import "@/styles/base/variables";
 
-.container {
+.gender div {
   width: 260px;
-  height:40px;
-  border-radius: 4px;
-  background-color: $lightest;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  gap: 8px;
   align-items: center;
-
-}
-.label{
-  user-select: none;
-}
-
-.input[type="radio"] {
-  display: none;
-}
-
-.input[type="radio"] + .label {
-  position: relative;
-  @include text-xs;
-  color: $on-surface;
+  justify-content: center;
   background-color: $lightest;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4px;
-  cursor: pointer;
-  transition: all 200ms ease;
-  z-index: 10;
-}
-
-.input[type="radio"]:checked + .label {
-  color: $on-secondary;
-  background-color: $secondary;
-}
-
-.input[type="radio"] + .label {
-  width: 126px;
-  height:32px;
-  padding: 5px 20px;
   border-radius: 4px;
+
+  span {
+    width: 120px;
+    height: 32px;
+    background-color: $lightest;
+    @include text-xs;
+    color: $on-surface;
+    text-align: center;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0 4px;
+    cursor: pointer;
+
+    &.gender__label__checked {
+      color: $on-secondary;
+      background-color: $secondary;
+    }
+  }
+
 }
