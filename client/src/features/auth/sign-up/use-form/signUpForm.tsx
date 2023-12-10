@@ -61,6 +61,7 @@ const SignUpForm = () => {
         <label>
           Телефон
           <input type="phone" {...register("phone", { required: true })} />
+          {errors.phone && <span> This field is required</span>}
         </label>
 
         <label>

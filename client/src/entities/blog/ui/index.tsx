@@ -9,7 +9,7 @@ const Blog = () => {
     <section className={styles.blog}>
       <SectionHeader header="Статьи" link="/blog" linkName="Все статьи" />
       <div className={styles.blog__list}>
-        {blogs.map((blog) => (
+        {blogs.slice(0, 3).map((blog) => (
           <BlogCard
             key={blog.id}
             id={blog.id}
