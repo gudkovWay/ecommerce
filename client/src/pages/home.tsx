@@ -10,10 +10,17 @@ import Offers from "@/features/product/offers";
 import YandexMap from "@/widgets/map";
 import Blog from "@/entities/blog";
 import Footer from "@/widgets/footer";
+import { useEffect } from "react";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
   const isSignInOpen = useSelector((state: any) => state.signIn.isOpen);
+
+  useEffect(() => {
+    isSignInOpen || isSignUpOpen
+      ? document.body.classList.add("no-scroll")
+      : document.body.classList.remove("no-scroll");
+  }, []);
 
   return (
     <>

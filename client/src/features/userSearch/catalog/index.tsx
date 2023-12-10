@@ -3,7 +3,10 @@ import items from "./catalog.json";
 import styles from "./Catalog.module.scss";
 import { useRef } from "react";
 
-export default function Catalog(props: { style: "menu" | "full" }) {
+export default function Catalog(props: {
+  style: "menu" | "full";
+  reference: any;
+}) {
   const ref = useRef<HTMLDivElement>();
   const isHovering = useHover(ref);
 
@@ -16,7 +19,7 @@ export default function Catalog(props: { style: "menu" | "full" }) {
   }
 
   return (
-    <ul className={catalogStyle}>
+    <ul className={catalogStyle} ref={props.reference}>
       {items.map((item) => (
         <li key={item.id} className={styles.menu__item}>
           {item.name}

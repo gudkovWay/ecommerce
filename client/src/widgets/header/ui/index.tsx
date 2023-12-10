@@ -47,7 +47,7 @@ export const Header = () => {
         </div>
         <UserMenu />
       </div>
-      {isHovering && <Catalog style="menu" />}
+      {isHovering && <Catalog style="menu" referece={ref} />}
     </header>
   );
 };

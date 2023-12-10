@@ -23,6 +23,7 @@ article {
 }
 .no-scroll {
   overflow: hidden;
+  scrollbar-gutter: static;
 }
 .overlay {
   position: absolute;
