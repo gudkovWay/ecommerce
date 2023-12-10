@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setAuth } from "../../authSlice";
 import { authControllerSignUp } from "@/shared/api/generated";
 import { closeModal } from "../SignUpSlice";
+import { openModal } from "@/features/auth/sign-in/SignInSlice";
 import UIButton from "@/shared/ui/buttons/default";
 import ChooseGender from "./gender";
 import UserSelect from "./select";
@@ -36,6 +37,11 @@ const SignUpForm = () => {
 
   const onDisabled = () => {
     setIsDisabled(!isDisabled);
+  };
+
+  const onOpenSignIn = () => {
+    dispatch(closeModal());
+    dispatch(openModal());
   };
 
   const signUpMutation = useMutation({
@@ -141,7 +147,7 @@ const SignUpForm = () => {
           />
         </div>
         <UIButton
-          buttonFn={() => console.log("pressed secondary button")}
+          buttonFn={() => onOpenSignIn()}
           buttonType="button"
           buttonText="Войти"
           size="s"

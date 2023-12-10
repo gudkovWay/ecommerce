@@ -63,6 +63,7 @@ const UserMenu = () => {
             buttonFn={() => dispatch(openSignIn())}
             size="m"
             color="primary"
+            rightIcon
             icon={
               <Image
                 src="/header/log-in.svg"

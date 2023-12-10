@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Res,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Prisma } from '@prisma/client';
@@ -23,8 +24,12 @@ export class ProductsController {
   }
 
   @Get()
-  findAll() {
-    return this.productsService.findAll();
+  findAll(
+    @Param('limit') limit: number,
+    @Param('offset') offset: number,
+    @Res() res: any,
+  ) {
+    return res.json(this.productsService.findAll(limit, offset));
   }
 
   @Get(':id')

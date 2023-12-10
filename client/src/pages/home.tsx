@@ -10,27 +10,10 @@ import Offers from "@/features/product/offers";
 import YandexMap from "@/widgets/map";
 import Blog from "@/entities/blog";
 import Footer from "@/widgets/footer";
-import { authControllerGetSessionInfo } from "@/shared/api/generated";
-import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
 
 export default function Home() {
   const isSignUpOpen = useSelector((state: any) => state.signUp.isOpen);
   const isSignInOpen = useSelector((state: any) => state.signIn.isOpen);
-  {
-    const { data } = useQuery({
-      queryKey: ["session"],
-      queryFn: () => authControllerGetSessionInfo(),
-    });
-  }
-
-  useEffect(() => {
-    if (isSignUpOpen || isSignInOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-  }, [isSignInOpen, isSignUpOpen]);
 
   return (
     <>

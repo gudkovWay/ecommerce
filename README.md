@@ -12,6 +12,8 @@
 
 [shields-fsd-pain]: https://img.shields.io/badge/Feature--Sliced-Design?style=for-the-badge&labelColor=262224&color=262224&logoWidth=10&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAALFAAACxQGJ1n/vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABHSURBVHgB7dKxCQAgDETR08ZNHNBBHNBNrBQFuyCCKQK5V6QMfBJAWVij5zLwKbW6d0VYx2TZyXnBKxvEZJnDx2bylf1kdRM6tiAZsruQ/QAAAABJRU5ErkJggg==
 
+### Desgin:
+
 <a href="https://www.figma.com/file/9wgs2crKwaYHGdRXxCtflk/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D1%8F%D0%BD%D0%BE%D1%87%D0%BA%D0%B0-Share-Full-(Copy)-(Copy)-(Copy)?type=design&node-id=3-68&mode=design&t=NKyCzr3eS22ui2VE-0">![Figma](https://img.shields.io/badge/Figma-000000?style=for-the-badge&logo=figma&logoColor=white)</a>
 ## 🇺🇸 EU:
 

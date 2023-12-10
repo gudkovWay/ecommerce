@@ -11,8 +11,10 @@ export class ProductsService {
     return this.db.product.create({ data: createProductDto });
   }
 
-  async findAll() {
+  async findAll(limit: number, offset: number) {
     return this.db.product.findMany({
+      take: limit,
+      skip: offset,
       include: {
         reviews: {
           select: {

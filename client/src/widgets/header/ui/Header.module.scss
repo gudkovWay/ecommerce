@@ -2,15 +2,24 @@
 
 .header {
   max-width: 1440px;
-  max-height: 80px;
+  max-height: 72px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 40px;
   background-color: $surface;
-  padding: 16px 0;
   z-index: 2;
+  @include default-shadow-s;
+
+  &__content {
+    max-width: 1440px;
+    height: 72px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: $surface;
+    z-index: 2;
+    @include default-shadow-s
+  }
 }
 
 .productActions {
@@ -19,6 +28,7 @@
   gap: 16px;
 
   .catalog {
+    height: 72px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -27,7 +37,7 @@
       width: 140px;
       height: 40px;
       background-color: $secondary;
-      border-radius: 8px;
+      border-radius: 4px;
       display: flex;
       gap: 8px;
       align-items: center;
@@ -36,11 +46,6 @@
       a {
         @include text-s;
         color: $on-secondary;
-      }
-      &:hover {
-        a ul {
-          display: grid;
-        }
       }
     }
   }

@@ -2,27 +2,40 @@
 
 .menu {
   width: 1440px;
-  height: 248px;
+  height: 278px;
   position: absolute;
-  top: 60px;
+  top: 72px;
   left: 0px;
   padding: 40px 75px;
-  display: none;
+  display: grid;
   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
   background-color: $surface;
   transition: all .77s ease-in-out;
   cursor: default;
-  z-index: 1;
+  z-index: 0;
+  animation: fadeIn .27s ease-in;
+
+  &__item {
+    max-width: max-content;
+    max-height: 24px;
+    cursor: pointer;
+    @include bold-text-s;
+    transition: color 0.15s ease-in-out;
+    color: $on-surface;
+    &:hover {
+      color: $primary;
+  }
+
+  }
 }
 
-.category {
-  max-width: max-content;
-  max-height: 24px;
-  cursor: pointer;
-  @include bold-text-s;
-  transition: color 0.15s ease-in-out;
-  color: $on-surface;
-  &:hover {
-    color: $primary;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+    top: 60px
   }
 }

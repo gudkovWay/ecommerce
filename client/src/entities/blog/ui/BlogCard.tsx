@@ -31,6 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             buttonType="button"
             buttonText="Подробнее"
             color="secondary"
+            muted
             decoration="default"
             size="m"
           />

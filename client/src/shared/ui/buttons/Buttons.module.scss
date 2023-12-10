@@ -1,6 +1,9 @@
 @import '@/styles/base/variables';
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   padding-right: 11px;
   border-radius: 4px;
@@ -57,56 +60,22 @@
         color: $on-secondary;
       }
     }
-  }
 
-}
-
-.secondaryButton {
-  border: 1px solid $secondary;
-  border-radius: 4px;
-  transition: all 0.19s ease-in;
-
-
-  &__outline {
-    color: $secondary;
-
-    &:hover {
-      transform: translateY(-5px);
-      @include secondary-shadow-s;
+    &__muted {
+      background-color: $secondary-muted;
+      border: 1px solid $secondary-muted;
+      color: $secondary;
+      &:hover {
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: $on-secondary;
+      }
     }
   }
-  &__default {
-    background-color: $secondary-muted;
-    border: 1px solid $secondary-muted;
-    color: $secondary;
+  &__rightIcon {
+    justify-content: flex-end;
 
-    &:hover {
-      background-color: $secondary;
-      border: 1px solid $secondary;
-      color: $on-secondary;
-    }
   }
-}
-
-.closeButton {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: $lightest;
-}
-
-.backButton {
-  width: 111px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 11.5px;
-  @include text-xs;
-  color: $hardest;
 }
 
 .button__size {
@@ -127,3 +96,23 @@
       @include text-l;
     }
   }
+.closeButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $lightest;
+}
+
+.backButton {
+  width: 111px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11.5px;
+  @include text-xs;
+  color: $hardest;
+}

@@ -7,4 +7,6 @@ export type ButtonProps = {
   color?: "primary" | "secondary";
   muted?: boolean;
   icon?: JSX.Element;
+  rightIcon?: boolean;
+  leftIcon?: boolean;
 };
