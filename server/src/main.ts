@@ -1,25 +1,19 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import * as cookieParser from 'cookie-parser';
-import { ValidationPipe } from '@nestjs/common';
+import { UsersModule } from './users/users.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(UsersModule);
 
-  const config = new DocumentBuilder().setTitle('Block list').build();
+  app.useStaticAssets(join(__dirname, '..', 'public'));
+  app.setBaseViewsDir(join(__dirname, '..', 'servers/email-templates'));
+  app.setViewEngine('ejs');
 
-  const document = SwaggerModule.createDocument(app, config);
-
-  SwaggerModule.setup('api', app, document);
-
-  app.use(cookieParser());
   app.enableCors({
-    origin: ['http://localhost:3001'],
-    credentials: true,
+    origin: '*',
   });
-  app.useGlobalPipes(new ValidationPipe());
 
-  await app.listen(3000);
+  await app.listen(4001);
 }
 bootstrap();

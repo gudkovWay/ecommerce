@@ -1,15 +1,7 @@
-import useHover from "@/shared/hooks/hover";
 import items from "./catalog.json";
 import styles from "./Catalog.module.scss";
-import { useRef } from "react";
 
-export default function Catalog(props: {
-  style: "menu" | "full";
-  reference: any;
-}) {
-  const ref = useRef<HTMLDivElement>();
-  const isHovering = useHover(ref);
-
+export default function Catalog(props: { style: "menu" | "full" }) {
   let catalogStyle = "";
 
   if (props.style === "menu") {
@@ -19,7 +11,7 @@ export default function Catalog(props: {
   }
 
   return (
-    <ul className={catalogStyle} ref={props.reference}>
+    <ul className={catalogStyle}>
       {items.map((item) => (
         <li key={item.id} className={styles.menu__item}>
           {item.name}

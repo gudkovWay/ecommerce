@@ -47,7 +47,11 @@ export const Header = () => {
         </div>
         <UserMenu />
       </div>
-      {isHovering && <Catalog style="menu" referece={ref} />}
+      {isHovering && (
+        <div ref={ref}>
+          <Catalog style="menu" />{" "}
+        </div>
+      )}
     </header>
   );
 };
