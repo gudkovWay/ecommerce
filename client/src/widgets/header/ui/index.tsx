@@ -15,43 +15,45 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__content}>
-        <div className={styles.logo}>
-          <Link href="/">
-            <Image
-              className={styles.logoDesktop}
-              src="/logo/headerDesktop.svg"
-              alt="Logo"
-              width={152}
-              height={32}
-            />
-          </Link>
-        </div>
-        <div className={styles.productActions}>
-          <div className={styles.catalog} ref={ref}>
-            <button className={styles.catalogBtn}>
+      <div className="container">
+        <div className={styles.header__content}>
+          <div className={styles.logo}>
+            <Link href="/">
               <Image
-                src="/header/menu.svg"
-                alt="Catalog Icon"
-                width={24}
-                height={24}
+                className={styles.logoDesktop}
+                src="/logo/headerDesktop.svg"
+                alt="Logo"
+                width={152}
+                height={32}
               />
-
-              <a>Каталог</a>
-            </button>
+            </Link>
           </div>
+          <div className={styles.productActions}>
+            <div className={styles.catalog} ref={ref}>
+              <button className={styles.catalogBtn}>
+                <Image
+                  src="/header/menu.svg"
+                  alt="Catalog Icon"
+                  width={24}
+                  height={24}
+                />
 
-          <div className={styles.search}>
-            <Search />
+                <a>Каталог</a>
+              </button>
+            </div>
+
+            <div className={styles.search}>
+              <Search />
+            </div>
           </div>
+          <UserMenu />
         </div>
-        <UserMenu />
+        {isHovering && (
+          <div ref={ref}>
+            <Catalog style="menu" />
+          </div>
+        )}
       </div>
-      {isHovering && (
-        <div ref={ref}>
-          <Catalog style="menu" />{" "}
-        </div>
-      )}
     </header>
   );
 };

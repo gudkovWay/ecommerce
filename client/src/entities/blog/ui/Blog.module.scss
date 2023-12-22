@@ -1,6 +1,10 @@
 @import "@/styles/base/variables";
 
 .blog {
+  &__wrapper {
+    padding: 0 103px;
+  }
+
   &__list {
     display: flex;
     flex-direction: row;

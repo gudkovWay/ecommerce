@@ -2,10 +2,12 @@
 
  .section {
     &__header {
+      max-width: 1208px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
+      margin-bottom: 40px;
 
 
       a {
@@ -14,9 +16,8 @@
         color: $hardest;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        padding-left: 8px;
-        gap: 8px;
+        justify-content: center;
+        gap: 16px;
       }
     }
   }

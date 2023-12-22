@@ -77,7 +77,6 @@ const SignInForm = () => {
             <label className={styles.formLabel}>Пароль</label>
             <input
               type="password"
-              placeholder="Введите ваш пароль"
               {...register("password", { required: true })}
               value={password}
               onChange={(e) => setPassword(e.target.value)}

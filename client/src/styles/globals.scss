@@ -6,9 +6,9 @@
   font-family: 'Rubik', sans-serif;
 }
 
-main {
+.container {
   max-width: 1440px;
-  height: 100vh;
+  position: relative;
   margin: 0 auto;
 }
 
@@ -23,7 +23,6 @@ article {
 }
 .no-scroll {
   overflow: hidden;
-  scrollbar-gutter: static;
 }
 .overlay {
   position: absolute;

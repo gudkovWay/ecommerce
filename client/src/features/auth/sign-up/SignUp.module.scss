@@ -1,7 +1,7 @@
 @import '@/styles/base/variables';
 .signUp {
   max-width: 690px;
-  max-height: 890px;
+  max-height: 90vh;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -11,8 +11,9 @@
   align-items: center;
   gap: 40px;
   background-color: $surface;
+  border-radius: 4px;
   z-index: 1111;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 
@@ -23,6 +24,7 @@
 }
 
 .signUpForm {
+  max-height: 40vh;
   width: 690px;
   display: flex;
   flex-flow: column;
@@ -32,7 +34,7 @@
 }
 .requiredFields{
   display: grid;
-  grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 16px 32px;
 }
 .fieldsHeader{

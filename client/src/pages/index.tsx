@@ -26,7 +26,10 @@ export default function Home() {
     <>
       <Head>
         <title>северЯночки</title>
-        <meta name="description" content="pet project" />
+        <meta
+          name="description"
+          content="Северяночка. Интернет Магазин Продуктов. Доставка. Работа курьером."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

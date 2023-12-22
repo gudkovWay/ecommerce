@@ -21,7 +21,7 @@ const WelcomeSlider = () => {
           <Image
             src="/slider/001.png"
             alt="Slider Image"
-            width={1440}
+            width={1920}
             height={200}
           />
         </div>
@@ -29,7 +29,7 @@ const WelcomeSlider = () => {
           <Image
             src="/slider/002.png"
             alt="Slider Image"
-            width={1440}
+            width={1920}
             height={200}
           />
         </div>
