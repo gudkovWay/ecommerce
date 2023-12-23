@@ -1,0 +1,16 @@
+@import "@/styles/base/variables";
+
+.link {
+  max-width: 400px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  @include text-xs;
+  color: $on-surface;
+
+  &__current {
+    color: $hard;
+  }
+}

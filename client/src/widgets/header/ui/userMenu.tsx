@@ -27,7 +27,7 @@ const UserMenu = () => {
         <li>
           <a className={styles.link}>
             <Image
-              src="header/orders.svg"
+              src="/header/orders.svg"
               alt="order icon"
               width={24}
               height={24}
@@ -38,7 +38,7 @@ const UserMenu = () => {
         <li>
           <a className={styles.link}>
             <Image
-              src="header/cart.svg"
+              src="/header/cart.svg"
               alt="basket icon"
               width={24}
               height={24}
