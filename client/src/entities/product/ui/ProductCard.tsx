@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -107,7 +108,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {discountPrice ? <p>Обычная</p> : null}
           </span>
         </div>
-        <h3 className={styles.product__card__content__name}>{name}</h3>
+        <Link href={`/product/${id}`} className={styles.product__card__content__name}> 
+                <h3 className={styles.product__card__content__name}>{name}</h3>
+        </Link>
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating })}
         </div>
