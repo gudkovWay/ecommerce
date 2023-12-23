@@ -11,8 +11,8 @@ const Breadcumbs: React.FC<BreadcumbsProps> = ({ productName, productId }) => {
 
 
 
-    <div className="container">
       <div className={styles.breadcumbs}>
+        <div className="container">
         <ul>
           <li><UILinks href="/" text="Главная" /></li>
           <li><UILinks href="/catalog" text="Каталог" /></li>

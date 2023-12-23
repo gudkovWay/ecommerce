@@ -7,10 +7,10 @@
   top: 72px;
   left: 0px;
   padding: 40px 75px;
-  display: grid;
+  display: none;
   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
   background-color: $surface;
-  @include default-shadow-s;
+  box-shadow: inset 0 4px 3px $default-color, 2px 4px 8px $default-color ;
   transition: all .77s ease-in-out;
   cursor: default;
   z-index: 0;
@@ -24,15 +24,12 @@
     @include bold-text-s;
     transition: color 0.15s ease-in-out;
     color: $on-surface;
+
     &:hover {
       color: $primary;
-  }
+    }
 
   }
-}
-
-.menu__active {
-  display: grid;
 }
 
 @keyframes fadeIn {
@@ -40,6 +37,7 @@
     opacity: 0;
     top: 0;
   }
+
   to {
     opacity: 1;
     top: 60px

@@ -33,6 +33,12 @@
     align-items: center;
     gap: 8px;
 
+    &:hover {
+      ul {
+        display: grid
+      }
+    }
+
     .catalogBtn {
       width: 140px;
       height: 40px;
@@ -46,6 +52,7 @@
       a {
         @include text-s;
         color: $on-secondary;
+
       }
     }
   }
@@ -62,28 +69,28 @@
   z-index: 111;
 
   .actions {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      gap: 24px;
-      padding-top: 10px;
-      z-index: 110;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 24px;
+    padding-top: 10px;
+    z-index: 110;
 
-      .link {
-        width: 65px;
-        height: 50px;
-        display: flex;
-        flex-flow: column;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 8px;
-        @include text-xs;
-        color: $on-surface;
-        text-align: center;
-        z-index: 111;
-        cursor: pointer;
-      }
+    .link {
+      width: 65px;
+      height: 50px;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      @include text-xs;
+      color: $on-surface;
+      text-align: center;
+      z-index: 111;
+      cursor: pointer;
     }
+  }
 
   .auth {
     display: flex;
@@ -94,24 +101,25 @@
 
   .authActions {
     display: flex;
-  flex-flow: row ;
-  align-items: center;
-  gap: 24px;
-  justify-content: space-between;
-
-  .userBar {
-    display: flex;
-    gap: 10px;
+    flex-flow: row;
     align-items: center;
+    gap: 24px;
+    justify-content: space-between;
 
-    .avatar {
-      height: 24px;
-      width: 24px;
-      border-radius: 24px
+    .userBar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .avatar {
+        height: 24px;
+        width: 24px;
+        border-radius: 24px
       }
     }
 
     .userMenu {
       margin-top: 10px;
     }
-  }}
+  }
+}

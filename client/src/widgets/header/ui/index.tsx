@@ -3,15 +3,10 @@ import Link from "next/link";
 
 import Catalog from "@/features/userSearch/catalog";
 import Search from "@/features/userSearch/search";
-
-import styles from "./Header.module.scss";
 import UserMenu from "./userMenu";
-import { useRef } from "react";
-import useHover from "@/shared/hooks/hover";
+import styles from "./Header.module.scss";
 
 export const Header = () => {
-  const ref = useRef<HTMLDivElement>();
-  const isHovering = useHover(ref);
 
   return (
     <header className={styles.header}>
@@ -29,7 +24,7 @@ export const Header = () => {
             </Link>
           </div>
           <div className={styles.productActions}>
-            <div className={styles.catalog} ref={ref}>
+            <div className={styles.catalog} >
               <button className={styles.catalogBtn}>
                 <Image
                   src="/header/menu.svg"
@@ -38,7 +33,9 @@ export const Header = () => {
                   height={24}
                 />
 
-                <a>Каталог</a>
+                <a>Каталог
+                  <Catalog style="menu" />
+                </a>
               </button>
             </div>
 
@@ -48,11 +45,6 @@ export const Header = () => {
           </div>
           <UserMenu />
         </div>
-        {isHovering && (
-          <div ref={ref}>
-            <Catalog style="menu" />
-          </div>
-        )}
       </div>
     </header>
   );

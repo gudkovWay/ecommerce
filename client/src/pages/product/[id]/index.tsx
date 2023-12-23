@@ -37,7 +37,7 @@ const ProductPage = () => {
       </Head>
       <main>
         <article>
-          <Breadcumbs productName={productName} productId={`/product/${router.query.id}`}/>
+          <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
         </article>
 
       </main>
