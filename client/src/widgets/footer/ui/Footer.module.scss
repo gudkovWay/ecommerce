@@ -20,7 +20,7 @@
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 116px;
+    padding: 0 80px;
 
       &__site {
         display: flex;
@@ -32,7 +32,7 @@
         display: flex;
         flex-flow: row ;
         align-items: center;
-        gap: 40px;
+        gap: 16px;
 
         li:last-child  a {
           display: flex;

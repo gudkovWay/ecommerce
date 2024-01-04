@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import WelcomeSlider from "@/features/slider";
-import Products from "@/entities/product";
-import Offers from "@/features/product/offers";
+import Products from "@/widgets/product";
 import YandexMap from "@/widgets/map";
-import Blog from "@/entities/blog";
+import Blog from "@/widgets/blog";
+import Offers from "@/features/product/offers";
+import WelcomeSlider from "@/features/slider";
 
 export default function Home() {
 

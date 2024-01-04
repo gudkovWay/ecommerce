@@ -1,18 +1,15 @@
 import UILinks from "@/shared/ui/links";
 import styles from "./Breadcumbs.module.scss"
+import { ProductHeaderProps } from "@/shared/ui/types/product/ProductPageProps";
 
-export type BreadcumbsProps = {
-  productName: string;
-  produjctId: string;
-}
-
-const Breadcumbs: React.FC<BreadcumbsProps> = ({ productName, productId }) => {
+const Breadcumbs: React.FC<ProductHeaderProps> = ({ productName, productId }) => {
   return (
 
 
 
-      <div className={styles.breadcumbs}>
-        <div className="container">
+    <div className={styles.breadcumbs}>
+
+      <div className="container">
         <ul>
           <li><UILinks href="/" text="Главная" /></li>
           <li><UILinks href="/catalog" text="Каталог" /></li>

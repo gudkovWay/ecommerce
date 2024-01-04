@@ -1,7 +1,7 @@
-import styles from "../Product.module.scss";
 import SectionHeader from "@/shared/ui/header";
-import ProductCard from "../ProductCard";
-import products from "../../products.json";
+import styles from "../../ui/Product.module.scss";
+import ProductCard from "../../ui/ProductCard";
+import products from "@/shared/constants/products.json";
 
 const ProductNew = () => {
   return (

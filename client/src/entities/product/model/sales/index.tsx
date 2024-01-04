@@ -1,20 +1,16 @@
-import styles from "../Product.module.scss";
-import ProductCard from "../ProductCard";
+import styles from "../../ui/Product.module.scss";
 import SectionHeader from "@/shared/ui/header";
-import products from "../../products.json";
+import ProductCard from "../../ui/ProductCard";
+import products from "@/shared/constants/products.json";
 
-const ProductPurchased = () => {
+const ProductSales = () => {
   return (
     <section className={styles.products__section}>
       <div className="container">
-        <SectionHeader
-          header="Покупали раньше"
-          link="/purchased"
-          linkName="Все покупки"
-        />
+        <SectionHeader header="Акции" link="/sales" linkName="Все акции" />
         <div className={styles.products__section__list}>
           {products
-            .filter((product) => product.categories.includes("purchased"))
+            .filter((product) => product.categories.includes("sales"))
             .map((product) => (
               <ProductCard
                 key={product.id}
@@ -32,4 +28,4 @@ const ProductPurchased = () => {
   );
 };
 
-export default ProductPurchased;
+export default ProductSales;

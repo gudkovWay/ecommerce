@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import Head from "next/head"
 
 import { Breadcumbs } from "@/features/breadcumbs"
-import products from "@/entities/product/products.json"
+import products from "@/shared/constants/products.json"
 
 const ProductPage = () => {
   const router = useRouter()
@@ -12,9 +12,6 @@ const ProductPage = () => {
   useEffect(() => {
 
     products.map((product) => {
-      console.log(product)
-      console.log(product.id)
-      console.log(router.query.id)
 
       if (product.id == router.query.id) {
         setProductName(product.name)
@@ -37,7 +34,7 @@ const ProductPage = () => {
       </Head>
       <main>
         <article>
-          <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
+            <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
         </article>
 
       </main>
