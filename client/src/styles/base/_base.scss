@@ -1,9 +1,14 @@
-  .sectionTitle{
+  .sectionTitle {
     @include header-text-m;
     color: $on-surface;
- }
+  }
+  
+  .productName {
+    @include header-text-s;
+    color: $on-surface;
+  }
 
- .authPrimaryButton button {
-   justify-content: center;
-   margin-top: 30px;
- }
+  .authPrimaryButton button {
+    justify-content: center;
+    margin-top: 30px;
+  }

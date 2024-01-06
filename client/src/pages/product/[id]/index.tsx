@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import Head from "next/head"
 
 import { Breadcumbs } from "@/features/breadcumbs"
+import { ProductView } from "@/entities/product/ui/ProductView"
 import products from "@/shared/constants/products.json"
 
 const ProductPage = () => {
@@ -33,8 +34,11 @@ const ProductPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <article>
-            <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
+        <article className="product">
+          <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
+        </article>
+        <article className="product">
+          <ProductView productName={productName} />
         </article>
 
       </main>
