@@ -1,4 +1,4 @@
-import SectionHeader from "@/shared/ui/header";
+import UIHeader from "@/shared/ui/header";
 import styles from "../../ui/Product.module.scss";
 import ProductCard from "../../ui/ProductCard";
 import products from "@/shared/constants/products.json";
@@ -7,7 +7,7 @@ const ProductNew = () => {
   return (
     <section className={styles.products__section}>
       <div className="container">
-        <SectionHeader header="Новиники" link="/new" linkName="Все новинки" />
+        <UIHeader header="Новиники" link="/new" linkName="Все новинки" type="category"/>
         <div className={styles.products__section__list}>
           {products
             .filter((product) => product.categories.includes("new"))

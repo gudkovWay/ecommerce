@@ -1,8 +1,3 @@
-  .sectionTitle {
-    @include header-text-m;
-    color: $on-surface;
-  }
-  
   .productName {
     @include header-text-s;
     color: $on-surface;

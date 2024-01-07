@@ -1,23 +1,37 @@
  @import "@/styles/base/variables";
 
  .section {
-    &__header {
-      max-width: 1208px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      margin-bottom: 40px;
+   &__header {
+     max-width: 1208px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-direction: row;
 
+     &__margin {
+       margin-bottom: 40px;
+     }
 
-      a {
-        width: 168px;
-        @include text-s;
-        color: $hardest;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-      }
-    }
-  }
+     &__title {
+       color: $on-surface;
+
+       &__category {
+         @include header-text-m;
+       }
+
+       &__product {
+         @include header-text-s;
+       }
+     }
+
+     a {
+       width: 168px;
+       @include text-s;
+       color: $hardest;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 16px;
+     }
+   }
+ }

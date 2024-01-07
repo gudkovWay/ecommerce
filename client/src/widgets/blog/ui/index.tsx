@@ -1,4 +1,4 @@
-import SectionHeader from "@/shared/ui/header";
+import UIHeader from "@/shared/ui/header";
 import BlogCard from "./BlogCard";
 import blogs from "@/shared/constants/blogs.json";
 
@@ -9,7 +9,7 @@ const Blog = () => {
     <section className={styles.blog}>
       <div className="container">
         <div className={styles.blog__wrapper}>
-          <SectionHeader header="Статьи" link="/blog" linkName="Все статьи" />
+          <UIHeader header="Статьи" link="/blog" linkName="Все статьи" type="category" />
           <div className={styles.blog__list}>
             {blogs.slice(0, 3).map((blog) => (
               <BlogCard

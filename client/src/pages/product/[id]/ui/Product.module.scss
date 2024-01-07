@@ -1,0 +1,19 @@
+@import '@/styles/base/variables';
+
+.product div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 52px;
+}
+
+.product__header {
+  max-height: 32px;
+
+  span {
+    color: $on-surface;
+    @include text-xs;
+  }
+}

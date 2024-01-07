@@ -1,3 +1,4 @@
+import UIHeader from "@/shared/ui/header";
 import styles from "./Map.module.scss";
 
 const YandexMap = () => {
@@ -5,7 +6,7 @@ const YandexMap = () => {
     <section className={styles.map}>
       <div className="container">
         <div className={styles.map__wrapper}>
-          <h2 className="sectionTitle">Наши магазины</h2>
+         <UIHeader type="category" header="Наши магазины" /> 
         </div>
       </div>
     </section>

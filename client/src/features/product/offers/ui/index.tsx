@@ -1,12 +1,13 @@
 import Image from "next/image";
 import styles from "./Offers.module.scss";
+import UIHeader from "@/shared/ui/header";
 
 const SpecialOffers = () => {
   return (
     <section className={styles.offers}>
       <div className="container">
         <div className={styles.offers__wrapper}>
-          <h2 className="sectionTitle">Специальные предложения</h2>
+          <UIHeader type="category" header="Специальные предложения" /> 
 
           <div className={styles.offers__banners}>
             <div className={styles.offers__banner}>
