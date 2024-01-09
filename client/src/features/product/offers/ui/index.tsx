@@ -6,7 +6,6 @@ const SpecialOffers = () => {
   return (
     <section className={styles.offers}>
       <div className="container">
-        <div className={styles.offers__wrapper}>
           <UIHeader type="category" header="Специальные предложения" /> 
 
           <div className={styles.offers__banners}>
@@ -40,7 +39,6 @@ const SpecialOffers = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

@@ -1,7 +1,9 @@
+@import '@/styles/base/variables';
+
 .map {
   max-height: 510px;
 
   &__wrapper {
-    padding: 0 103px;
+    width: 1440px;
   }
 }

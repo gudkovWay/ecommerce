@@ -7,10 +7,11 @@
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1208px;
   position: relative;
   margin: 0 auto;
 }
+
 
 article {
   width: 100%;
@@ -18,12 +19,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 120px;
-  padding: 80px 116px;
   background-color: $background-content;
-}
-
-.product {
-  padding: 24px 116px;
 }
 
 .no-scroll {

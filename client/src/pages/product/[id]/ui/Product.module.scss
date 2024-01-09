@@ -1,19 +1,43 @@
 @import '@/styles/base/variables';
 
-.product div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+.root div {
   gap: 16px;
-  padding: 0 52px;
 }
-
-.product__header {
+.product__headers {
   max-height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
 
   span {
     color: $on-surface;
     @include text-xs;
   }
+
+  &__review {
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+
+    span {
+      width: 60px;
+    }
+
+    &__stars {
+      width: 96px;
+      max-height: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+      img {
+        height: 32px;
+      }
+    }
+  }
+
 }

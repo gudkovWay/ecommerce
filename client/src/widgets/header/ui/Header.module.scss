@@ -12,13 +12,10 @@
     height: 72px;
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
     gap: 40px;
-    padding: 0 55px;
-    background-color: $surface;
     z-index: 2;
-    @include default-shadow-s
   }
 }
 

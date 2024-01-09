@@ -9,6 +9,7 @@ import products from "@/shared/constants/products.json"
 const ProductPage = () => {
   const router = useRouter()
   const [productName, setProductName] = useState("")
+  const [productRate, setProductRate] = useState(0)
 
   useEffect(() => {
 
@@ -16,8 +17,9 @@ const ProductPage = () => {
 
       if (product.id == router.query.id) {
         setProductName(product.name)
+        setProductRate(product.rating)
       }
-
+      
     })
 
   }, [router.query.id])
@@ -38,7 +40,7 @@ const ProductPage = () => {
           <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
         </article>
         <article className="product">
-          <Product productName={productName} productId={router.query.id} />
+          <Product productName={productName} productId={router.query.id} productRate={productRate} />
         </article>
 
       </main>

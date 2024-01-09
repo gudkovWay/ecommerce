@@ -1,14 +1,16 @@
 @import "@/styles/base/variables";
-
 .products {
 
   &__section {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    
+    &__sales {
+      padding-top: 80px;
+    }
 
     &__list {
-      width: 1240px;
       max-height: 369px;
       display: flex;
       flex-flow: row nowrap;
