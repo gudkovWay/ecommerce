@@ -10,7 +10,7 @@ import {
 } from "@/features/drawer/purchase/purchaseDrawerSlice";
 import styles from "./Product.module.scss";
 import { RootState } from "@/shared/lib/redux/store";
-import Favorite from "@/features/product/favorite/ui";
+import { Favorite } from "@/features/product/favorite";
 
 type ProductCardProps = {
   id: number;
@@ -77,20 +77,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           ) : null}
           <span
-            className={`${
-              discountPrice
+            className={`${discountPrice
                 ? styles.product__card__content__price__real
                 : styles.product__card__content__price__real +
-                  " " +
-                  styles.product__card__content__price__real__bold
-            }`}
+                " " +
+                styles.product__card__content__price__real__bold
+              }`}
           >
             {price} ₽ <br />
             {discountPrice ? <p>Обычная</p> : null}
           </span>
         </div>
-        <Link href={`/product/${id}`} className={styles.product__card__content__name}> 
-                <h3 className={styles.product__card__content__name}>{name}</h3>
+        <Link href={`/product/${id}`} className={styles.product__card__content__name}>
+          <h3 className={styles.product__card__content__name}>{name}</h3>
         </Link>
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating })}

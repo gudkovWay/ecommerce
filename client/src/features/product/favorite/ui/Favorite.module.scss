@@ -22,3 +22,17 @@
 
   }
 }
+
+.favoriteText {
+  width: 124px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+
+  span {
+    @include text-xs;
+    color: $hardest;
+  }
+}

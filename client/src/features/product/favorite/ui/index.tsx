@@ -4,7 +4,9 @@ import Image from "next/image";
 import { setIsFavorite } from "@/features/drawer/favorite/favoriteDrawerSlice";
 import { RootState } from "@/shared/lib/redux/store";
 
+import FavoriteModelIcon from "../model/icon";
 import styles from "./Favorite.module.scss";
+import FavoriteModelText from "../model/text";
 
 interface FavoriteProps {
   type: "icon" | "text";
@@ -22,22 +24,23 @@ const Favorite: React.FC<FavoriteProps> = ({ type, id }) => {
     favoriteItems.find((item) => item.id === id) &&
     favoriteItems.find((item) => item.id === id).isFavorite;
 
-  return (
-    <button
-      className={clsx(styles.favorite, {
-        [styles.favorite__active]: isFavorite,
-      })}
-      onClick={() => dispatch(setIsFavorite({ id }))}
-      type="button"
-    >
-      <Image
-        src="/icons/favorite.svg"
-        alt="favorite"
-        width={24}
-        height={24}
-      />
-    </button>
+  const iconClassname = clsx(styles.favorite, {
+    [styles.favorite__active]: isFavorite,
+  })
+  const textClassname = clsx(styles.favoriteText)
 
+  const handleIsFavorite = () => {
+    dispatch(setIsFavorite({ id }))
+  }
+
+  return (
+    <>
+      {type === "icon" ? (
+        <FavoriteModelIcon className={iconClassname} func={handleIsFavorite} />
+      ) :
+        <FavoriteModelText className={textClassname} func={handleIsFavorite} />
+      }
+    </>
   )
 }
 

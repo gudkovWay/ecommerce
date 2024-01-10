@@ -2,6 +2,7 @@ import UIHeader from "@/shared/ui/header";
 import renderRating from "@/features/product/rating";
 import styles from "./Product.module.scss"
 import {Shared} from "@/features/shared";
+import { Favorite } from "@/features/product/favorite";
 
 export interface ProductProps {
   productName: string;
@@ -28,7 +29,7 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate }
 
             <Shared /> 
 
-            Favorite
+            <Favorite type="text" id={productId} /> 
 
           </div>
         </div>
