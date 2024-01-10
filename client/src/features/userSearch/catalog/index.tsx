@@ -1,4 +1,4 @@
-import items from "./catalog.json";
+import items from "@/shared/constants/catalog.json";
 import styles from "./Catalog.module.scss";
 
 export default function Catalog(props: { style: "menu" | "full" }) {

@@ -2,16 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-
 import renderRating from "@/features/product/rating";
 import {
   addItem,
   decrement,
   increment,
 } from "@/features/drawer/purchase/purchaseDrawerSlice";
-import { setIsFavorite } from "@/features/drawer/favorite/favoriteDrawerSlice";
 import styles from "./Product.module.scss";
 import { RootState } from "@/shared/lib/redux/store";
+import Favorite from "@/features/product/favorite/ui";
 
 type ProductCardProps = {
   id: number;
@@ -32,16 +31,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const dispatch = useDispatch();
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
-  const { favoriteItems } = useSelector(
-    (state: RootState) => state.favoriteDrawer,
-  );
 
   const isAdded = items && items.find((item) => item.id === id);
 
-  const isFavorite =
-    favoriteItems &&
-    favoriteItems.find((item) => item.id === id) &&
-    favoriteItems.find((item) => item.id === id).isFavorite;
 
   return (
     <div
@@ -71,20 +63,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           height={160}
           className={styles.product__card__image__product}
         />
-        <button
-          className={clsx(styles.product__card__image__favorite, {
-            [styles.product__card__image__favorite__active]: isFavorite,
-          })}
-          onClick={() => dispatch(setIsFavorite({ id }))}
-          type="button"
-        >
-          <Image
-            src="/icons/favorite.svg"
-            alt="favorite"
-            width={24}
-            height={24}
-          />
-        </button>
+
+        <Favorite type="icon" id={id} />
+
       </div>
       <div className={styles.product__card__content}>
         <div className={styles.product__card__content__price}>

@@ -1,6 +1,7 @@
 @import '@/styles/base/variables';
 
 .breadcumbs div {
+  padding-top: 24px; 
   ul {
     display: flex;
     flex-direction: row;

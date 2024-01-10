@@ -34,7 +34,7 @@ const UIButton: React.FC<ButtonProps> = ({
         [styles.button__secondary__outline]:
           decoration === "outline" && color === "secondary",
         [styles.button__rightIcon]: rightIcon === true,
-        [styles.button__leftIcon]: leftIcon,
+        [styles.button__leftIcon]: leftIcon === true,
       })}
     >
       {buttonText}

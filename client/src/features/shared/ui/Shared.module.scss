@@ -1,0 +1,15 @@
+@import '@/styles/base/variables';
+
+.root {
+  width: 132px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  span {
+    @include text-xs;
+    color: $hardest;
+    padding: 8px; 
+  }
+}
