@@ -1,6 +1,6 @@
-import ProductSales from "@/entities/product/model/sales";
-import ProductNew from "@/entities/product/model/new/";
-import ProductPurchased from "@/entities/product/model/purchased/";
+import ProductSales from "@/entities/product/model/demo/sales";
+import ProductNew from "@/entities/product/model/demo/new";
+import ProductPurchased from "@/entities/product/model/demo/purchased";
 
 const Products = () => {
   return (

@@ -4,7 +4,7 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3536 5.64645C11.5488 5.84171 11.5488 6.15829 11.3536 6.35355L5.70711 12L11.3536 17.6464C11.5488 17.8417 11.5488 18.1583 11.3536 18.3536C11.1583 18.5488 10.8417 18.5488 10.6464 18.3536L4.64645 12.3536C4.45118 12.1583 4.45118 11.8417 4.64645 11.6464L10.6464 5.64645C10.8417 5.45118 11.1583 5.45118 11.3536 5.64645Z" fill="#414141"/>
 </g>
 <defs>
-<filter id="filter0_d_27191_2063" x="-3" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_27191_2063" x="-3" y="0" width="32" height="32" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>

@@ -5,7 +5,7 @@
     "price": "50,50",
     "discountPrice": "44,50",
     "rating": 2,
-    "image": "/products/pancakes.png",
+    "image": ["/products/pancakes.png"],
     "categories": ["sales"]
   },
   {
@@ -14,7 +14,7 @@
     "price": "50,50",
     "discountPrice": "44,50",
     "rating": 3,
-    "image": "/products/milk.png",
+    "image": ["/products/milk.png"],
     "categories": ["sales", "new", "purchased"]
   },
   {
@@ -23,7 +23,7 @@
     "price": "50,50",
     "discountPrice": "44,50",
     "rating": 5,
-    "image": "/products/sausage.png",
+    "image": ["/products/sausage.png"],
     "categories": ["sales", "new"]
   },
   {
@@ -32,7 +32,7 @@
     "price": "50,50",
     "discountPrice": "44,50",
     "rating": 4.5,
-    "image": "/products/sausages.png",
+    "image": ["/products/sausages.png"],
     "categories": ["sales", "new", "purchased"]
   },
   {
@@ -40,7 +40,7 @@
     "name": "Колбаса Черкизово Сырокопченая САЛЬЧИПОН",
     "price": "599,99",
     "rating": 2,
-    "image": "/products/combine-kzs1218.png",
+    "image": ["/products/combine-kzs1218.png"],
     "categories": ["new", "purchased"]
   },
   {
@@ -48,7 +48,7 @@
     "name": "Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     "price": "77,99",
     "rating": 2,
-    "image": "/products/ham.png",
+    "image": ["/products/ham.png"],
     "categories": ["purchased"]
   }
 ]

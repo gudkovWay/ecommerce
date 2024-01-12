@@ -1,16 +1,14 @@
+import { ProductProps } from "@/entities/product/product";
 import UIHeader from "@/shared/ui/header";
-import renderRating from "@/features/product/rating";
-import styles from "./Product.module.scss"
-import {Shared} from "@/features/shared";
+import { Shared } from "@/features/shared";
 import { Favorite } from "@/features/product/favorite";
+import renderRating from "@/features/product/rating";
+import ProductCardFull from "@/entities/product/model/full";
+import styles from "./Product.module.scss"
+import ProductCard from "@/entities/product/ui/ProductCard";
 
-export interface ProductProps {
-  productName: string;
-  productId: number;
-  productRate: number;
-}
 
-const Product: React.FC<ProductProps> = ({ productName, productId, productRate }) => {
+const Product: React.FC<ProductProps> = ({ productName, productId, productRate, productPrice, productDiscountPrice, productImages }) => {
   return (
     <div className={styles.root}>
       <div className="container">
@@ -19,7 +17,7 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate }
 
           <div className={styles.product__headers}>
             <span>арт. {productId}</span>
-            
+
             <div className={styles.product__headers__review}>
               <div className={styles.product__headers__review__stars}>
                 {renderRating({ rating: productRate })}
@@ -27,11 +25,21 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate }
               <span><u>3 отзыва</u></span>
             </div>
 
-            <Shared /> 
+            <Shared />
 
-            <Favorite type="text" id={productId} /> 
-
+            <Favorite type="text" id={productId} />
           </div>
+
+          <ProductCard 
+            type="full"
+            productId={productId}
+            productName={productName}
+            productRate={productRate}
+            productPrice={productPrice}
+            productDiscountPrice={productDiscountPrice}
+            productImages={productImages}
+          />
+
         </div>
       </div>
     </div>

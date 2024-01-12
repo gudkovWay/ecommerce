@@ -15,13 +15,14 @@ const ProductNew = () => {
               .slice(0, 4)
               .map((product) => (
                 <ProductCard
+                  type="demo"
                   key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  rating={product.rating}
-                  price={product.price}
-                  discountPrice={product.discountPrice}
-                  imageSrc={product.image}
+                  productId={product.id}
+                  productName={product.name}
+                  productRate={product.rating}
+                  productPrice={product.price}
+                  productDiscountPrice={product.discountPrice}
+                  productImages={product.image}
                 />
               ))}
           </div>
