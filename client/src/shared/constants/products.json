@@ -2,10 +2,10 @@
   {
     "id": 1,
     "name": "Г/Ц Блинчики с мясом вес, Россия",
-    "price": "50,50",
-    "discountPrice": "44,50",
+    "price": "200",
+    "discountPrice": "100",
     "rating": 2,
-    "image": ["/products/pancakes.png"],
+    "image": ["/products/pancakes.png", "/products/milk.png"],
     "categories": ["sales"]
   },
   {

@@ -1,9 +1,8 @@
-import { ProductProps } from "@/entities/product/product";
+import { ProductProps } from "@/shared/types/product";
 import UIHeader from "@/shared/ui/header";
 import { Shared } from "@/features/shared";
 import { Favorite } from "@/features/product/favorite";
 import renderRating from "@/features/product/rating";
-import ProductCardFull from "@/entities/product/model/full";
 import styles from "./Product.module.scss"
 import ProductCard from "@/entities/product/ui/ProductCard";
 

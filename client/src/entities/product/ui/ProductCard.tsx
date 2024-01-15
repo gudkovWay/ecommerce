@@ -1,6 +1,6 @@
 import ProductCardDemo from "../model/demo";
-import ProductCardFull from "../model/full/";
-import { ProductProps } from "../product";
+import ProductCardFull from "@/widgets/product/model/full";
+import { ProductProps } from "@/shared/types/product";
 
 const ProductCard: React.FC<ProductProps> = ({ type, productId, productName, productPrice, productDiscountPrice, productRate, productImages }) => {
   return (

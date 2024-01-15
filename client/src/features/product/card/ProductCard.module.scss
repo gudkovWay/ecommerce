@@ -1,0 +1,39 @@
+@import '@/styles/base/variables';
+
+.product__card__content__button {
+  width: 256px;
+  height: 40px;
+  border: 1px solid $secondary;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include text-s;
+  color: $secondary;
+  transition: all .27s ease-in;
+
+  &:hover {
+    background-color: $primary;
+    color: $on-primary;
+    border: 1px solid $primary;
+  }
+
+  &__added {
+    width: 256px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    color: $on-secondary;
+    background-color: $secondary;
+    border-radius: 4px;
+    padding: 0 8px;
+
+    p {
+      @include text-s;
+      color: $on-secondary;
+    }
+  }
+
+}

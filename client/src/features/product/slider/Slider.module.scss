@@ -1,0 +1,45 @@
+@import '@/styles/base/variables';
+
+.images {
+  width: 584px;
+  height: 496px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+
+  &__left {
+    background-color: $surface; 
+  }
+
+  &__right {
+    width: 504px;
+    height: 496px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: $surface;
+    border-radius: 4px;
+    @include default-shadow-xs;
+
+    &__discount {
+      width: 56px;
+      height: 32px;
+      border-radius: 4px;
+      background-color: $primary;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: $on-primary;
+        @include text-s;
+      }
+    }
+  }
+}

@@ -10,6 +10,10 @@ const ProductPage = () => {
   const router = useRouter()
   const [productName, setProductName] = useState("")
   const [productRate, setProductRate] = useState(0)
+  const [productPrice, setProductPrice] = useState("")
+  const [productDiscountPrice, setProductDiscountPrice] = useState("")
+  const [images, setImages] = useState([])
+
 
   useEffect(() => {
 
@@ -18,6 +22,9 @@ const ProductPage = () => {
       if (product.id == router.query.id) {
         setProductName(product.name)
         setProductRate(product.rating)
+        setProductPrice(product.price)
+        setProductDiscountPrice(product.discountPrice)
+        setImages(product.image)
       }
       
     })
@@ -40,7 +47,14 @@ const ProductPage = () => {
           <Breadcumbs productName={productName} productId={`/product/${router.query.id}`} />
         </article>
         <article className="product">
-          <Product productName={productName} productId={router.query.id} productRate={productRate} />
+          <Product 
+            productName={productName} 
+            productId={router.query.id} 
+            productRate={productRate} 
+            productPrice={productPrice}
+            productDiscountPrice={productDiscountPrice}
+            productImages={images}
+          />
         </article>
 
       </main>

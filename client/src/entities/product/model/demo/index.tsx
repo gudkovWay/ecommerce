@@ -2,16 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+
 import renderRating from "@/features/product/rating";
-import {
-  addItem,
-  decrement,
-  increment,
-} from "@/features/drawer/purchase/purchaseDrawerSlice";
-import styles from "../../ui/Product.module.scss";
-import { RootState } from "@/shared/lib/redux/store";
+import ProductDrawer from "@/features/product/card";
 import { Favorite } from "@/features/product/favorite";
-import { ProductProps } from "../../product";
+import { ProductProps } from "@/shared/types/product";
+import { RootState } from "@/shared/lib/redux/store";
+import styles from "../../ui/Product.module.scss";
 
 const ProductCardDemo: React.FC<ProductProps> = ({
   productName,
@@ -21,7 +18,6 @@ const ProductCardDemo: React.FC<ProductProps> = ({
   productImages,
   productId,
 }) => {
-  const dispatch = useDispatch();
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
   const isAdded = items && items.find((item) => item.id === productId);
 
@@ -84,36 +80,9 @@ const ProductCardDemo: React.FC<ProductProps> = ({
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating: productRate })}
         </div>
+        
+          <ProductDrawer productId={productId} />
 
-        {isAdded ? (
-          <div className={styles.product__card__content__button__added}>
-            <button
-              onClick={() => dispatch(decrement({ productId }))}
-              className={styles.product__card__content__button__added__button}
-            >
-              <Image
-                src="/icons/minus.svg"
-                alt="minus"
-                width={24}
-                height={24}
-              />
-            </button>
-            <p>{items.find((item) => item.id === productId)?.counter}</p>
-            <button
-              onClick={() => dispatch(increment({ productId }))}
-              className={styles.product__card__content__button__added__button}
-            >
-              <Image src="/icons/plus.svg" alt="plus" width={24} height={24} />
-            </button>
-          </div>
-        ) : (
-          <button
-            onClick={() => dispatch(addItem({ productId }))}
-            className={styles.product__card__content__button}
-          >
-            В корзину
-          </button>
-        )}
       </div>
     </div>
   );
