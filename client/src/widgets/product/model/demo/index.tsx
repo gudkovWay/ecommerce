@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
@@ -8,7 +8,7 @@ import ProductDrawer from "@/features/product/card";
 import { Favorite } from "@/features/product/favorite";
 import { ProductProps } from "@/shared/types/product";
 import { RootState } from "@/shared/lib/redux/store";
-import styles from "../../ui/Product.module.scss";
+import styles from "../../Product.module.scss";
 
 const ProductCardDemo: React.FC<ProductProps> = ({
   productName,
@@ -81,7 +81,7 @@ const ProductCardDemo: React.FC<ProductProps> = ({
           {renderRating({ rating: productRate })}
         </div>
         
-          <ProductDrawer productId={productId} />
+          <ProductDrawer productId={productId} itemAdded={isAdded} />
 
       </div>
     </div>

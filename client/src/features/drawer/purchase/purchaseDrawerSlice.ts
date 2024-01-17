@@ -9,7 +9,7 @@ export interface drawerInitialState {
 const initialState: drawerInitialState = {
   counter: 0,
   items: [],
-  isAdded: false,
+  isAdded: true,
 };
 
 export const purchaseDrawerSlice = createSlice({

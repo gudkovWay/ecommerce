@@ -4,8 +4,6 @@ import { Shared } from "@/features/shared";
 import { Favorite } from "@/features/product/favorite";
 import renderRating from "@/features/product/rating";
 import styles from "./Product.module.scss"
-import ProductCard from "@/entities/product/ui/ProductCard";
-
 
 const Product: React.FC<ProductProps> = ({ productName, productId, productRate, productPrice, productDiscountPrice, productImages }) => {
   return (
@@ -28,17 +26,6 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate, 
 
             <Favorite type="text" id={productId} />
           </div>
-
-          <ProductCard 
-            type="full"
-            productId={productId}
-            productName={productName}
-            productRate={productRate}
-            productPrice={productPrice}
-            productDiscountPrice={productDiscountPrice}
-            productImages={productImages}
-          />
-
         </div>
       </div>
     </div>

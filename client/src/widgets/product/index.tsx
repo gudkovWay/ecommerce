@@ -1,15 +1,18 @@
-import ProductSales from "@/entities/product/model/demo/sales";
-import ProductNew from "@/entities/product/model/demo/new";
-import ProductPurchased from "@/entities/product/model/demo/purchased";
+import ProductCardDemo from "./model/demo";
+import ProductNew from "./model/demo/new";
 
-const Products = () => {
+type ProductsProps = {
+  page: "home" | "product"
+}
+
+const Products: React.FC<ProductsProps> = ({ page }) => {
   return (
     <>
-      <ProductSales />
-      <ProductNew />
-      <ProductPurchased />
+      {page === "home" ? (
+        <ProductNew />
+      ) : null}
     </>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

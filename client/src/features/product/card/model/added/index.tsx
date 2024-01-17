@@ -1,9 +1,9 @@
 import { decrement, increment } from "@/features/drawer/purchase/purchaseDrawerSlice";
 import { RootState } from "@/shared/lib/redux/store";
-import styles from "../../ProductCard.module.scss"
-import { ProductDrawerProps } from "../../productcard";
-import { useDispatch, useSelector } from "react-redux";
 import Icons from "@/shared/ui/icons";
+import { useDispatch, useSelector } from "react-redux";
+import styles from "../../ProductCard.module.scss";
+import { ProductDrawerProps } from "../../productcard";
 
 const AddedToDrawer: React.FC<ProductDrawerProps> = ({ productId }) => {
   const dispatch = useDispatch();

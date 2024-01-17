@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import styles from "./Slider.module.scss";
 import Image from "next/image";
+import { useState } from "react";
+import styles from "./Slider.module.scss";
 
 type ProductSliderProps = {
   productImages: string[],

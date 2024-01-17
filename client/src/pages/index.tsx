@@ -22,7 +22,7 @@ export default function Home() {
       <main>
         <WelcomeSlider />
         <article>
-          <Products />
+          <Products page="home"/>
           <Offers />
           <YandexMap />
           <Blog />
