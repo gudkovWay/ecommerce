@@ -4,13 +4,13 @@ import Image from "next/image";
 import clsx from "clsx";
 
 import renderRating from "@/features/product/rating";
-import ProductDrawer from "@/features/product/card";
+import ProductDrawer from "@/features/product/drawer";
 import { Favorite } from "@/features/product/favorite";
 import { ProductProps } from "@/shared/types/product";
 import { RootState } from "@/shared/lib/redux/store";
-import styles from "../../Product.module.scss";
+import styles from "./ProductCard.module.scss";
 
-const ProductCardDemo: React.FC<ProductProps> = ({
+const ProductCard: React.FC<ProductProps> = ({
   productName,
   productRate,
   productPrice,
@@ -81,11 +81,11 @@ const ProductCardDemo: React.FC<ProductProps> = ({
           {renderRating({ rating: productRate })}
         </div>
         
-          <ProductDrawer productId={productId} itemAdded={isAdded} />
+          <ProductDrawer productId={productId} />
 
       </div>
     </div>
   );
 };
 
-export default ProductCardDemo;
+export default ProductCard;

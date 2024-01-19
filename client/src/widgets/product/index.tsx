@@ -1,18 +1,19 @@
-import ProductCardDemo from "./model/demo";
-import ProductNew from "./model/demo/new";
+import ProductHome from "./model/home"
 
-type ProductsProps = {
+interface ProductProps {
   page: "home" | "product"
 }
 
-const Products: React.FC<ProductsProps> = ({ page }) => {
+const Product: React.FC<ProductProps> = ({page}) => {
   return (
     <>
       {page === "home" ? (
-        <ProductNew />
-      ) : null}
+          <ProductHome />
+      ) : (
+        null
+      )}
     </>
   )
 }
 
-export default Products
+export default Product

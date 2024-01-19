@@ -3,7 +3,7 @@ export interface ProductProps {
   productId: number;
   productRate: number;
   productPrice: string;
-  productDiscountPrice: string;
+  productDiscountPrice?: string;
   productImages: string[];
   type?: "demo" | "full"
 }

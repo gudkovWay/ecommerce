@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Products from "@/widgets/product";
+import Product from "@/widgets/product";
 import YandexMap from "@/widgets/map";
 import Blog from "@/widgets/blog";
 import Offers from "@/features/product/offers";
@@ -22,7 +22,7 @@ export default function Home() {
       <main>
         <WelcomeSlider />
         <article>
-          <Products page="home"/>
+          <Product page="home"/>
           <Offers />
           <YandexMap />
           <Blog />

@@ -1,6 +1,6 @@
-import ProductCardDemo from ".";
+import styles from "../ui/ProductCard.module.scss";
 import UIHeader from "@/shared/ui/header";
-import styles from "../../Product.module.scss";
+import ProductCard from "../ui/ProductCard";
 import products from "@/shared/constants/products.json";
 
 const ProductNew = () => {
@@ -14,8 +14,7 @@ const ProductNew = () => {
               .filter((product) => product.categories.includes("new"))
               .slice(0, 4)
               .map((product) => (
-                <ProductCardDemo
-                  type="demo"
+                <ProductCard
                   key={product.id}
                   productId={product.id}
                   productName={product.name}
