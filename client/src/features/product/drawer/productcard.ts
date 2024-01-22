@@ -1,4 +1,4 @@
 export type ProductDrawerProps = {
-  productId: number;
+  id: number;
 }
 

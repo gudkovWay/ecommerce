@@ -1,25 +1,32 @@
 import { useSelector } from "react-redux";
-import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 
 import renderRating from "@/features/product/rating";
-import ProductDrawer from "@/features/product/drawer";
-import { Favorite } from "@/features/product/favorite";
-import { ProductProps } from "@/shared/types/product";
-import { RootState } from "@/shared/lib/redux/store";
 import styles from "./ProductCard.module.scss";
+import { RootState } from "@/shared/lib/redux/store";
+import { Favorite } from "../favorite";
+import ProductDrawer from "../drawer";
 
-const ProductCard: React.FC<ProductProps> = ({
-  productName,
-  productRate,
-  productPrice,
-  productDiscountPrice,
-  productImages,
-  productId,
+type ProductCardProps = {
+  id: number;
+  name: string;
+  rating: number;
+  price: string;
+  discountPrice?: string;
+  imageSrc: string[];
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  name,
+  rating,
+  price,
+  discountPrice,
+  imageSrc,
+  id,
 }) => {
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
-  const isAdded = items && items.find((item) => item.id === productId);
+  const isAdded = items && items.find((item) => item.id === id);
 
   return (
     <div
@@ -43,46 +50,43 @@ const ProductCard: React.FC<ProductProps> = ({
         ) : null}
 
         <Image
-          src={productImages[0]}
+          src={imageSrc[0]}
           alt="product"
           width={272}
           height={160}
           className={styles.product__card__image__product}
         />
 
-        <Favorite type="icon" id={productId} />
+        <Favorite type="icon" id={id} />
 
       </div>
       <div className={styles.product__card__content}>
         <div className={styles.product__card__content__price}>
-          {productDiscountPrice ? (
+          {discountPrice ? (
             <span className={styles.product__card__content__price__discount}>
-              {productDiscountPrice} ₽
+              {discountPrice} ₽
               <br />
               <p>С картой</p>
             </span>
           ) : null}
           <span
-            className={`${productDiscountPrice
+            className={`${discountPrice
                 ? styles.product__card__content__price__real
                 : styles.product__card__content__price__real +
                 " " +
                 styles.product__card__content__price__real__bold
               }`}
           >
-            {productPrice} ₽ <br />
-            {productDiscountPrice ? <p>Обычная</p> : null}
+            {price} ₽ <br />
+            {discountPrice ? <p>Обычная</p> : null}
           </span>
         </div>
-        <Link href={`/product/${productId}`} className={styles.product__card__content__name}>
-          <h3 className={styles.product__card__content__name}>{productName}</h3>
-        </Link>
+        <h3 className={styles.product__card__content__name}>{name}</h3>
         <div className={styles.product__card__content__rating}>
-          {renderRating({ rating: productRate })}
+          {renderRating({ rating })}
         </div>
-        
-          <ProductDrawer productId={productId} />
 
+        <ProductDrawer id={id} /> 
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
-import styles from "../ui/ProductCard.module.scss";
 import UIHeader from "@/shared/ui/header";
-import ProductCard from "../ui/ProductCard";
+import ProductCard from "@/features/product/card";
 import products from "@/shared/constants/products.json";
+import styles from "@/features/product/card/ProductCard.module.scss";
 
 const ProductNew = () => {
   return (
@@ -16,12 +16,12 @@ const ProductNew = () => {
               .map((product) => (
                 <ProductCard
                   key={product.id}
-                  productId={product.id}
-                  productName={product.name}
-                  productRate={product.rating}
-                  productPrice={product.price}
-                  productDiscountPrice={product.discountPrice}
-                  productImages={product.image}
+                  id={product.id}
+                  name={product.name}
+                  rating={product.rating}
+                  price={product.price}
+                  discountPrice={product.discountPrice}
+                  imageSrc={product.image}
                 />
               ))}
           </div>

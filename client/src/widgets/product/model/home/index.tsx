@@ -1,6 +1,6 @@
-import ProductNew from "@/features/product/card/model/new"
-import ProductPurchased from "@/features/product/card/model/purchased"
-import ProductSales from "@/features/product/card/model/sales"
+import ProductNew from "./new"
+import ProductPurchased from "./purchased"
+import ProductSales from "./sales"
 
 const ProductHome = () => {
   return (

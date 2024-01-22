@@ -5,14 +5,14 @@ import AddedToDrawer from "./model/added";
 import UnAddedToDrawer from "./model/unadded";
 import { ProductDrawerProps } from "./productcard";
 
-const ProductDrawer: React.FC<ProductDrawerProps> = ({productId}) => {
+const ProductDrawer: React.FC<ProductDrawerProps> = ({id}) => {
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
-  const isAdded = items && items.find((item) => item.id === productId);
+  const isAdded = items && items.find((item) => item.id === id);
   
   return (
     <>
       {
-        isAdded ? <AddedToDrawer productId={productId}/> : <UnAddedToDrawer productId={productId}/> 
+        isAdded ? <AddedToDrawer id={id}/> : <UnAddedToDrawer id={id}/> 
       }
     </>    
   )
