@@ -1,0 +1,26 @@
+@import '@/styles/base/variables';
+
+.discountPrice {
+  width: 56px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: $primary;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_left {
+    bottom: 10px;
+    left: 10px;
+  }
+  &_right {
+    top: 20px;
+    right: 20px;
+  }
+
+  span {
+    color: $on-primary;
+    @include text-s;
+  }
+}

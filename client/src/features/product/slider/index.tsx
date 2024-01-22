@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./Slider.module.scss";
+import DiscountPrice from "@/shared/ui/discount";
 
 type ProductSliderProps = {
   productImages: string[],
   price: string,
-  discountPrice: string,
+  discountPrice?: string,
 }
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ productImages, price, discountPrice }) => {
@@ -33,13 +34,9 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ productImages, price, dis
           alt="Предпросмотр товара"
           src={productImages[index]}
         />
-        <div className={styles.images__right__discount}>
-          <span>
-            -
-            {(parseFloat(discountPrice) / parseFloat(price)) * 100}
-            %
-          </span>
-        </div>
+
+        <DiscountPrice price={price} discountPrice={discountPrice} position="right" />
+
       </div>
     </div>
   )

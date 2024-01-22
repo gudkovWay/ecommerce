@@ -12,18 +12,18 @@ const ProductPage = () => {
   const [productRate, setProductRate] = useState(0)
   const [productPrice, setProductPrice] = useState("")
   const [productDiscountPrice, setProductDiscountPrice] = useState("")
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState<string[]>([""])
 
 
   useEffect(() => {
 
-    products.map((product) => {
+    products.find((product) => {
 
-      if (product.id == router.query.id) {
+      if (product.id == Number(router.query.id)) {
         setProductName(product.name)
         setProductRate(product.rating)
         setProductPrice(product.price)
-        setProductDiscountPrice(product.discountPrice)
+        setProductDiscountPrice(product.discountPrice!)
         setImages(product.image)
       }
       
@@ -49,7 +49,7 @@ const ProductPage = () => {
         <article className="product">
           <Product 
             productName={productName} 
-            productId={router.query.id} 
+            productId={Number(router.query.id)} 
             productRate={productRate} 
             productPrice={productPrice}
             productDiscountPrice={productDiscountPrice}

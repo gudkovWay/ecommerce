@@ -1,9 +1,10 @@
-import { ProductProps } from "@/shared/types/product";
-import UIHeader from "@/shared/ui/header";
 import { Shared } from "@/features/shared";
 import { Favorite } from "@/features/product/favorite";
+import { ProductProps } from "@/shared/types/product";
+import UIHeader from "@/shared/ui/header";
 import renderRating from "@/features/product/rating";
 import styles from "./Product.module.scss"
+import ProductSlider from "@/features/product/slider";
 
 const Product: React.FC<ProductProps> = ({ productName, productId, productRate, productPrice, productDiscountPrice, productImages }) => {
   return (
@@ -26,6 +27,9 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate, 
 
             <Favorite type="text" id={productId} />
           </div>
+
+          <ProductSlider productImages={productImages} price={productPrice} discountPrice={productDiscountPrice} />
+
         </div>
       </div>
     </div>

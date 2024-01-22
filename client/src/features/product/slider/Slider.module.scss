@@ -23,23 +23,5 @@
     background-color: $surface;
     border-radius: 4px;
     @include default-shadow-xs;
-
-    &__discount {
-      width: 56px;
-      height: 32px;
-      border-radius: 4px;
-      background-color: $primary;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      span {
-        color: $on-primary;
-        @include text-s;
-      }
-    }
   }
 }

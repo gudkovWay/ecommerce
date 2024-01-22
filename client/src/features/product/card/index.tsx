@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import Link from "next/link";
 import clsx from "clsx";
 
 import renderRating from "@/features/product/rating";
-import styles from "./ProductCard.module.scss";
-import { RootState } from "@/shared/lib/redux/store";
-import { Favorite } from "../favorite";
 import ProductDrawer from "../drawer";
+import { Favorite } from "../favorite";
+import { RootState } from "@/shared/lib/redux/store";
+import styles from "./ProductCard.module.scss";
+import DiscountPrice from "@/shared/ui/discount";
 
 type ProductCardProps = {
   id: number;
@@ -59,6 +61,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <Favorite type="icon" id={id} />
 
+        <DiscountPrice price={price} discountPrice={discountPrice} position="left" />
+
       </div>
       <div className={styles.product__card__content}>
         <div className={styles.product__card__content__price}>
@@ -81,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {discountPrice ? <p>Обычная</p> : null}
           </span>
         </div>
-        <h3 className={styles.product__card__content__name}>{name}</h3>
+        <Link href={`/product/${id}`}><h3 className={styles.product__card__content__name}>{name}</h3></Link> 
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating })}
         </div>
