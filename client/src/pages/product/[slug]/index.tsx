@@ -19,7 +19,7 @@ const ProductPage = () => {
 
     products.find((product) => {
 
-      if (product.id == Number(router.query.id)) {
+      if (product.slug === (router.query.slug)) {
         setProductName(product.name)
         setProductRate(product.rating)
         setProductPrice(product.price)
@@ -29,7 +29,7 @@ const ProductPage = () => {
       
     })
 
-  }, [router.query.id])
+  }, [router.query.slug])
 
   return (
     <>

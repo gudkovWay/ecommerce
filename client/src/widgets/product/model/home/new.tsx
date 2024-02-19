@@ -22,6 +22,7 @@ const ProductNew = () => {
                   price={product.price}
                   discountPrice={product.discountPrice}
                   imageSrc={product.image}
+                  slug={product.slug}
                 />
               ))}
           </div>

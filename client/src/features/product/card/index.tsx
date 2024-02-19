@@ -17,6 +17,7 @@ type ProductCardProps = {
   price: string;
   discountPrice?: string;
   imageSrc: string[];
+  slug: string;
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -26,6 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   discountPrice,
   imageSrc,
   id,
+  slug,
 }) => {
   const { items } = useSelector((state: RootState) => state.purchaseDrawer);
   const isAdded = items && items.find((item) => item.id === id);
@@ -85,7 +87,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {discountPrice ? <p>Обычная</p> : null}
           </span>
         </div>
-        <Link href={`/product/${id}`}><h3 className={styles.product__card__content__name}>{name}</h3></Link> 
+        <Link href={`/product/${slug}`}><h3 className={styles.product__card__content__name}>{name}</h3></Link> 
         <div className={styles.product__card__content__rating}>
           {renderRating({ rating })}
         </div>

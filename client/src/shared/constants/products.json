@@ -1,12 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Г/Ц Блинчики с мясом вес, Россия",
+    "name": "Блинчики с мясом вес, Россия",
     "price": "200",
     "discountPrice": "100",
     "rating": 2,
     "image": ["/products/pancakes.png", "/products/milk.png"],
-    "categories": ["sales"]
+    "categories": ["sales"],
+    "slug": "pancakes-meat-russia"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "discountPrice": "44,50",
     "rating": 3,
     "image": ["/products/milk.png"],
-    "categories": ["sales", "new", "purchased"]
+    "categories": ["sales", "new", "purchased"],
+    "slug": "milk-prostokvashino-past-pitevoe-celnoe-otbornoe"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "discountPrice": "44,50",
     "rating": 5,
     "image": ["/products/sausage.png"],
-    "categories": ["sales", "new"]
+    "categories": ["sales", "new"],
+    "slug": "sausages-meat-history"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "discountPrice": "44,50",
     "rating": 4.5,
     "image": ["/products/sausages.png"],
-    "categories": ["sales", "new", "purchased"]
+    "categories": ["sales", "new", "purchased"],
+    "slug": "sausages-meat-history-milk-and-cheese"
   },
   {
     "id": 5,
@@ -41,7 +45,8 @@
     "price": "599,99",
     "rating": 2,
     "image": ["/products/combine-kzs1218.png"],
-    "categories": ["new", "purchased"]
+    "categories": ["new", "purchased"],
+    "slug": "combine-kzs1218-sirokopchennaya"
   },
   {
     "id": 6,
@@ -49,6 +54,7 @@
     "price": "77,99",
     "rating": 2,
     "image": ["/products/ham.png"],
-    "categories": ["purchased"]
+    "categories": ["purchased"],
+    "slug": "combine-ksz1218"
   }
 ]
