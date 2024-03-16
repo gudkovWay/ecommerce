@@ -1,12 +1,13 @@
 import { Shared } from "@/features/shared";
 import { Favorite } from "@/features/product/favorite";
-import { ProductProps } from "@/shared/types/product";
+import { ProductUIProps } from "@/shared/types/product";
 import UIHeader from "@/shared/ui/header";
 import renderRating from "@/features/product/rating";
 import styles from "./Product.module.scss"
 import ProductSlider from "@/features/product/slider";
+import ProductCharacteristics from "@/shared/ui/product/characteristics";
 
-const Product: React.FC<ProductProps> = ({ productName, productId, productRate, productPrice, productDiscountPrice, productImages }) => {
+const Product: React.FC<ProductUIProps> = ({ productName, productId, productRate, productPrice, productDiscountPrice, productImages, productBrand, productCountry, productWeight }) => {
   return (
     <div className={styles.root}>
       <div className="container">
@@ -28,8 +29,10 @@ const Product: React.FC<ProductProps> = ({ productName, productId, productRate, 
             <Favorite type="text" id={productId} />
           </div>
 
-          <ProductSlider productImages={productImages} price={productPrice} discountPrice={productDiscountPrice} />
-
+          <div className={styles.wrapper__product}>
+            <ProductSlider productImages={productImages} price={productPrice} discountPrice={productDiscountPrice} />
+            <ProductCharacteristics price={productPrice} discountPrice={productDiscountPrice} brand={productBrand} country={productCountry} weight={productWeight} />
+          </div>
         </div>
       </div>
     </div>

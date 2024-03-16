@@ -4,7 +4,7 @@ import Head from "next/head"
 
 import { Breadcumbs } from "@/features/breadcumbs"
 import Product from "./ui"
-import products from "@/shared/constants/products.json"
+import products from "@/shared/constants/products"
 
 const ProductPage = () => {
   const router = useRouter()

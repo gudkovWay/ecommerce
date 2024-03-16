@@ -1,7 +1,7 @@
 import UIHeader from "@/shared/ui/header";
-import ProductCard from "@/features/product/card";
-import products from "@/shared/constants/products.json";
-import styles from "@/features/product/card/ProductCard.module.scss";
+import ProductCard from "@/shared/ui/product/card";
+import products from "@/shared/constants/products";
+import styles from "@/shared/ui/product/card/ProductCard.module.scss";
 
 const ProductSales = () => {
   return (

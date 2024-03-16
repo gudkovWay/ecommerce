@@ -1,14 +1,19 @@
 @import '@/styles/base/variables';
 
-.root > div {
+.root>div {
   gap: 16px;
 }
+
+.wrapper {
+  padding-bottom: 120px;
+}
+
 .product__headers {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 24px;
- 
+
   &__review {
     max-width: 164px;
     position: relative;
@@ -24,7 +29,7 @@
       align-items: center;
       margin-right: 8px;
     }
-  }    
+  }
 
   span {
     @include text-xs;

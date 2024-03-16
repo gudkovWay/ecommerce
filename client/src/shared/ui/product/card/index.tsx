@@ -4,8 +4,8 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import renderRating from "@/features/product/rating";
-import ProductDrawer from "../drawer";
-import { Favorite } from "../favorite";
+import ProductDrawer from "@/features/product/drawer/";
+import { Favorite } from "@/features/product/favorite/";
 import { RootState } from "@/shared/lib/redux/store";
 import styles from "./ProductCard.module.scss";
 import DiscountPrice from "@/shared/ui/discount";
